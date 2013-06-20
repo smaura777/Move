@@ -126,6 +126,16 @@
     return YES;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    textField.placeholder = nil;
+}
+
+/**
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    
+}
+**/
+
 
 #pragma - segue
 

@@ -8,6 +8,8 @@
 
 #import "ActivityDataController.h"
 #import "Activity.h"
+#import "AFJSONRequestOperation.h"
+
 
 @interface ActivityDataController()
 
@@ -21,6 +23,27 @@
 
 + (id)sharedInstance
 {
+    
+    /** TEST for AFNET  **/
+    
+    NSURL *url = [NSURL URLWithString:@"http://localhost:3000/activity/json"];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFJSONRequestOperation *operation = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                success:^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON) {
+            //NSLog(@"IP Address: %@", [JSON valueForKeyPath:@"origin"]);
+        NSLog(@"JSON == %@",[JSON description]);
+        NSLog(@"JSON == %@",JSON );
+                }
+    failure:^(NSURLRequest *request, NSHTTPURLResponse *response,NSError *error,id JSON){
+                
+                    NSLog(@"ERROR IN REQUEST");
+
+                }];
+    
+    [operation start];
+    
+    
     static dispatch_once_t pred = 0;
     __strong static id _sharedObject = nil;
     dispatch_once(&pred, ^{
@@ -34,6 +57,7 @@
 - (id)init {
     if (self = [super init]) {
         [self initializeDefaultActivityList];
+       
         return self;
     }
     return nil;
