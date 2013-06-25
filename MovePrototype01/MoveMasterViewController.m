@@ -38,6 +38,10 @@
 
 //   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"UpdatedActivityNotification" object:nil queue:nil usingBlock:^(NSNotification *note) {
+        NSLog(@"Received list update notification");
+         [self.tableView reloadData];
+    }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -68,6 +72,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    NSLog(@"Activity count: %d ", [self.activityDataController countOfList]);
+    
     return [self.activityDataController countOfList];
 }
 
@@ -134,7 +140,7 @@
         MoveCreateViewController *created = [segue sourceViewController];
         if (created.activity){
             [self.activityDataController addActivityLog:created.activity];
-            [self.tableView reloadData];
+                //[self.tableView reloadData];
         }
 
        [self dismissViewControllerAnimated:YES completion:NULL];

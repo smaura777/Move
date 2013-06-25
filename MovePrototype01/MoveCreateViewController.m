@@ -7,6 +7,7 @@
 //
 
 #import "MoveCreateViewController.h"
+#import "ActivityDataController.h"
 #import "Activity.h"
 
 @interface MoveCreateViewController ()
@@ -144,7 +145,7 @@
       
       if ([self.name.text length] && [self.type.text length]){
         Activity *temp = [[Activity alloc] init];
-            
+        temp.user_id = @"smaura777@gmail.com";
         temp.activity_name = self.name.text;
         temp.activity_type = self.type.text;
         temp.weight = ([self.weight.text length]) ? (self.weight.text): nil;
@@ -161,7 +162,7 @@
         temp.tibs = ([self.tibs.text length]) ? (self.tibs.text): nil;
           
         self.activity = temp;
-        
+          
       }
         
     }
