@@ -18,7 +18,8 @@
 - (NSUInteger)countOfList;
 - (Activity *)objectInListAtIndex:(NSUInteger)theIndex;
 - (void)addActivityLog:(Activity *)activity;
--(void)removeActivityAtIndex:(NSUInteger)theIndex;
+- (void)removeActivityAtIndex:(NSUInteger)theIndex;
+- (void)updateActivityAtIndex:(NSUInteger)theIndex;
 
 + (id)sharedInstance;
 

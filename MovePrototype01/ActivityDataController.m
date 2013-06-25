@@ -14,7 +14,8 @@
 @interface ActivityDataController()
 
 - (void)initializeDefaultActivityList;
-
+- (void)addActivityLog:(Activity *)activity;
+-(void)refreshActivityList;
 @end
 
 
@@ -81,7 +82,16 @@
     [self addActivityLog:act];
     [self addActivityLog:act2];
     
+    //[self refreshActivityList];
+    
 }
+
+
+// Refresh list from server 
+-(void)refreshActivityList {
+
+}
+
 
 
 #pragma setter
@@ -109,6 +119,10 @@
 
 -(void)removeActivityAtIndex:(NSUInteger)theIndex {
     [self.masterActivityList removeObjectAtIndex:theIndex];
+}
+
+- (void)updateActivityAtIndex:(NSUInteger)theIndex {
+
 }
 
 @end
