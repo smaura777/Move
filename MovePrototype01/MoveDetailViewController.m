@@ -37,7 +37,8 @@
     
         
         Activity *activity = [[ActivityDataController sharedInstance] objectInListAtIndex:self.activityIndex];
-        
+    NSLog(@"Activity : \n reps = %@\nsets = %@\nweight = %@\ndistance = %@\n",activity.reps,activity.sets,activity.weight,activity.distance);
+    /**
         self.name.text = [activity activity_name];
         self.type.text = [activity activity_type];
         self.weight.text = [activity weight];
@@ -47,7 +48,35 @@
         self.speed.text = [activity speed];
         self.duration.text = [activity duration];
         self.tibs.text = [activity tibs];
+    
+    **/
+    
+    self.name.text = [activity activity_name];
+    self.type.text = [activity activity_type];
+    self.duration.text = [activity duration];
+    self.tibs.text = [activity tibs];
+    
+    if ([activity.activity_type isEqualToString:@"weight"]){
+        self.weight.text = [activity weight];
+        self.reps.text = [activity reps];
+        self.sets.text = [activity sets];
         
+            // Hide the rest
+        [self.distance setHidden:YES];
+        [self.speed setHidden:YES];
+    }
+    else {
+        self.distance.text = [activity distance];
+        self.speed.text = [activity speed];
+        
+            // Hide the rest
+        [self.weight setHidden:YES];
+        [ self.reps setHidden:YES];
+        [self.sets setHidden:YES];
+        
+    }
+
+    
     
 }
 

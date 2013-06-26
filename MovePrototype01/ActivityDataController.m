@@ -12,6 +12,8 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 
+#define kBaseURL @"http://localhost:3000/activity"
+
 
 @interface ActivityDataController()
 
@@ -29,7 +31,8 @@
 + (id)sharedInstance
 {
     
-    /** TEST for AFNET  **/
+    /** TEST for AFNET
+    
     
     NSURL *url = [NSURL URLWithString:@"http://localhost:3000/activity/json"];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -47,7 +50,7 @@
                 }];
     
     [operation start];
-    
+    **/
     
     static dispatch_once_t pred = 0;
     __strong static id _sharedObject = nil;
@@ -94,7 +97,7 @@
 
 // Refresh list from server 
 -(void)refreshActivityList {
-    NSString *activityBaseURL = @"http://localhost:3000/activity";
+    NSString *activityBaseURL = kBaseURL; //@"http://localhost:3000/activity";
     NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
     [client registerHTTPOperationClass:[AFJSONRequestOperation class]];
@@ -112,18 +115,24 @@
         
         for (NSDictionary *di in responseSet){
             Activity *activity = [[Activity alloc] init];
-            //  NSLog(@"%@ \n ============================ \n",di);
+            
+            NSLog(@"%@ \n ============================ \n",[di description]);
             
             if ([[di objectForKey:@"type"] isEqual:@"weight"]){
                 //NSLog(@"TYPE == weight");
                 activity.activity_name = [di objectForKey:@"name"];
                 activity.activity_type = [di objectForKey:@"type"];
                 activity.user_id = [di objectForKey:@"uid"];
-                activity.duration = [di objectForKey:@"duration"];
-                activity.reps = [di objectForKey:@"reps"];
-                activity.sets = [di objectForKey:@"sets"];
+                activity.duration = (NSString *)[di objectForKey:@"duration"];
+                activity.reps = (NSString *)[di objectForKey:@"reps"];
+                activity.sets = (NSString *)[di objectForKey:@"sets"];
+                activity.weight = (NSString *)[di objectForKey:@"weight"];
+                
                 //activity.heartRate = [di objectForKey:@"heart_rate"];
                 activity.activity_id = [di objectForKey:@"_id"];
+                
+                
+                NSLog(@" ACTIVITY \n +++++++++++++\n sets:   %@ \n reps : %@ \n +++++++++++  \n",[activity sets],[activity reps]);
                 
             }
             else {
@@ -131,9 +140,9 @@
                 activity.activity_name = [di objectForKey:@"name"];
                 activity.activity_type = [di objectForKey:@"type"];
                 activity.user_id = [di objectForKey:@"uid"];
-                activity.duration = [di objectForKey:@"duration"];
-                activity.speed = [di objectForKey:@"speed"];
-                activity.distance = [di objectForKey:@"distance"];
+                activity.duration = (NSString *)[di objectForKey:@"duration"];
+                activity.speed = (NSString *)[di objectForKey:@"speed"];
+                activity.distance = (NSString *)[di objectForKey:@"distance"];
                 //activity.heartRate = [di objectForKey:@"heart_rate"];
                 activity.activity_id = [di objectForKey:@"_id"];
             }
@@ -205,12 +214,12 @@
         [ad setObject:activity.duration forKey:@"duration"];
     
     
-    NSString *activityBaseURL = @"http://localhost:3000/activity/create";
+    NSString *activityBaseURL = kBaseURL; //@"http://localhost:3000/activity/";
     NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
         //[client registerHTTPOperationClass:[AFJSONRequestOperation class]];
         //[client setDefaultHeader:@"Accept" value:@"application/json"];
-    [client postPath:@"" parameters:ad success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    [client postPath:@"create" parameters:ad success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"POST succeeded ");
         [self refreshActivityList];
         
@@ -221,13 +230,13 @@
 }
 
 -(void)removeActivityAtIndex:(NSUInteger)theIndex {
-    Activity *del = [[self.masterActivityList objectAtIndex:theIndex] copy];
+    Activity *del = [self.masterActivityList objectAtIndex:theIndex];
     NSLog(@"Will remove activity with ID %@",del.activity_id);
+    NSMutableDictionary *ad = [[NSMutableDictionary alloc] init];
+    [ad setObject:del.activity_id forKey:@"id"];
     [self.masterActivityList removeObjectAtIndex:theIndex];
-     NSMutableDictionary *ad = [[NSMutableDictionary alloc] init];
-     [ad setObject:del.activity_id forKey:@"id"];
     
-    NSString *activityBaseURL = @"http://localhost:3000/activity/";
+    NSString *activityBaseURL = kBaseURL ;//@"http://localhost:3000/activity/";
     NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
     [client deletePath:[ad objectForKey:@"id"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -249,7 +258,6 @@
     NSMutableDictionary *ad = [[NSMutableDictionary alloc] init];
     
     [ad setObject:up.activity_id forKey:@"id"];
-    
     
     if (up.activity_name)
         [ad setObject:up.activity_name forKey:@"name"];
@@ -276,7 +284,7 @@
         [ad setObject:up.duration forKey:@"duration"];
 
     
-    NSString *activityBaseURL = @"http://localhost:3000/activity/";
+    NSString *activityBaseURL = kBaseURL ; //@"http://localhost:3000/activity/";
     NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
     AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
     [client putPath:[ad objectForKey:@"id"] parameters:ad success:^(AFHTTPRequestOperation *operation, id responseObject) {
