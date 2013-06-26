@@ -39,8 +39,10 @@
 //   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
     [[NSNotificationCenter defaultCenter] addObserverForName:@"UpdatedActivityNotification" object:nil queue:nil usingBlock:^(NSNotification *note) {
+        
         NSLog(@"Received list update notification");
-         [self.tableView reloadData];
+        
+        [self.tableView reloadData];
     }];
 }
 

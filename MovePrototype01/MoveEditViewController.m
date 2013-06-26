@@ -86,6 +86,7 @@
         activity.speed = self.speed.text;
         activity.duration = self.duration.text ;
         activity.tibs = self.tibs.text;
+        [[ActivityDataController sharedInstance] updateActivityAtIndex:self.activityIndex];
     }
 }
 

@@ -100,7 +100,7 @@
     [client registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [client setDefaultHeader:@"Accept" value:@"application/json"];
     [client getPath:@"" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     NSLog(@"GET succeeded ");
+        // NSLog(@"GET succeeded ");
         
         if (!responseObject)
             return;
@@ -112,10 +112,10 @@
         
         for (NSDictionary *di in responseSet){
             Activity *activity = [[Activity alloc] init];
-            NSLog(@"%@ \n ============================ \n",di);
+            //  NSLog(@"%@ \n ============================ \n",di);
             
             if ([[di objectForKey:@"type"] isEqual:@"weight"]){
-                NSLog(@"TYPE == weight");
+                //NSLog(@"TYPE == weight");
                 activity.activity_name = [di objectForKey:@"name"];
                 activity.activity_type = [di objectForKey:@"type"];
                 activity.user_id = [di objectForKey:@"uid"];
@@ -127,7 +127,7 @@
                 
             }
             else {
-                NSLog(@"TYPE == CARDIO");
+                //  NSLog(@"TYPE == CARDIO");
                 activity.activity_name = [di objectForKey:@"name"];
                 activity.activity_type = [di objectForKey:@"type"];
                 activity.user_id = [di objectForKey:@"uid"];
@@ -213,7 +213,6 @@
     [client postPath:@"" parameters:ad success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"POST succeeded ");
         [self refreshActivityList];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"UpdatedActivityNotification" object:nil];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"POST Failed : %@ ",[error description]);
@@ -222,15 +221,72 @@
 }
 
 -(void)removeActivityAtIndex:(NSUInteger)theIndex {
-    Activity *del = [self.masterActivityList objectAtIndex:theIndex];
+    Activity *del = [[self.masterActivityList objectAtIndex:theIndex] copy];
     NSLog(@"Will remove activity with ID %@",del.activity_id);
-    
     [self.masterActivityList removeObjectAtIndex:theIndex];
+     NSMutableDictionary *ad = [[NSMutableDictionary alloc] init];
+     [ad setObject:del.activity_id forKey:@"id"];
     
-    //[self refreshActivityList];
+    NSString *activityBaseURL = @"http://localhost:3000/activity/";
+    NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
+    [client deletePath:[ad objectForKey:@"id"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"DELETE succeeded ");
+        [self refreshActivityList];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"DELETE Failed : %@ ",[error description]);
+    }];
+
+    
+   
+    
 }
 
 - (void)updateActivityAtIndex:(NSUInteger)theIndex {
+    Activity *up = [self.masterActivityList objectAtIndex:theIndex];
+    NSLog(@"Will remove activity with ID %@",up.activity_id);
+    NSMutableDictionary *ad = [[NSMutableDictionary alloc] init];
+    
+    [ad setObject:up.activity_id forKey:@"id"];
+    
+    
+    if (up.activity_name)
+        [ad setObject:up.activity_name forKey:@"name"];
+    
+    if (up.activity_type)
+        [ad setObject:up.activity_type forKey:@"type"];
+    
+    if (up.weight)
+        [ad setObject:up.weight forKey:@"weight"];
+    
+    if (up.reps)
+        [ad setObject:up.reps forKey:@"reps"];
+    
+    if (up.sets)
+        [ad setObject:up.sets forKey:@"sets"];
+    
+    if (up.distance)
+        [ad setObject:up.distance forKey:@"distance"];
+    
+    if (up.speed)
+        [ad setObject:up.speed forKey:@"speed"];
+    
+    if (up.duration)
+        [ad setObject:up.duration forKey:@"duration"];
+
+    
+    NSString *activityBaseURL = @"http://localhost:3000/activity/";
+    NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
+    [client putPath:[ad objectForKey:@"id"] parameters:ad success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"update succeeded ");
+        [self refreshActivityList];
+    
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"update Failed : %@ ",[error description]);
+    }];
 
 }
 
