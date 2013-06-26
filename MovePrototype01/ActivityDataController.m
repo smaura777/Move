@@ -12,8 +12,8 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 
-#define kBaseURL @"http://localhost:3000/activity"
-
+//#define kBaseURL @"http://localhost:3000/activity"
+#define kBaseURL @"http://54.243.233.106:8084" 
 
 @interface ActivityDataController()
 
