@@ -13,6 +13,10 @@
 #import "ActivityDataController.h"
 #import "Activity.h"
 
+@interface MoveMasterViewController ()
+-(void)reloadDataSource;
+- (void)doneLoadingTableViewData;
+@end
 
 //
 //@interface MoveMasterViewController () {
@@ -32,18 +36,36 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    if (_refreshHeaderView == nil) {
+		
+		EGORefreshTableHeaderView *view = [[EGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(0.0f, 0.0f - self.tableView.bounds.size.height, self.view.frame.size.width, self.tableView.bounds.size.height)];
+		view.delegate = self;
+		[self.tableView addSubview:view];
+		_refreshHeaderView = view;
+            //[view release];
+		
+	}
+	
+        //  update the last update date
+	[_refreshHeaderView refreshLastUpdatedDate];
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.navigationItem.rightBarButtonItem.accessibilityHint = @"Add new activity";
 
 //   UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //    self.navigationItem.rightBarButtonItem = addButton;
+    
+    
     [[NSNotificationCenter defaultCenter] addObserverForName:@"UpdatedActivityNotification" object:nil queue:nil usingBlock:^(NSNotification *note) {
         
         NSLog(@"Received list update notification");
         
         [self.tableView reloadData];
     }];
+    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -154,5 +176,54 @@
     }
 }
 
+
+
+#pragma mark -
+#pragma mark UIScrollViewDelegate Methods
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidScroll:scrollView];
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+	
+	[_refreshHeaderView egoRefreshScrollViewDidEndDragging:scrollView];
+	
+}
+
+
+#pragma mark -
+#pragma mark EGORefreshTableHeaderDelegate Methods
+
+- (void)egoRefreshTableHeaderDidTriggerRefresh:(EGORefreshTableHeaderView*)view{
+
+	[self reloadDataSource];
+    
+	[self performSelector:@selector(doneLoadingTableViewData) withObject:nil afterDelay:3.0];
+    
+    NSLog(@"egoRefreshTableHeaderDidTriggerRefresh CALLED ");
+}
+
+- (BOOL)egoRefreshTableHeaderDataSourceIsLoading:(EGORefreshTableHeaderView*)view{
+	
+	return self.activityDataController.isLoading; // should return if data source model is reloading
+	
+}
+
+- (NSDate*)egoRefreshTableHeaderDataSourceLastUpdated:(EGORefreshTableHeaderView*)view{
+	
+	return [NSDate date]; // should return date data source was last changed
+	
+}
+
+-(void)reloadDataSource{
+    [self.activityDataController reload];
+}
+
+- (void)doneLoadingTableViewData{
+    [_refreshHeaderView egoRefreshScrollViewDataSourceDidFinishedLoading:self.tableView];
+}
 
 @end

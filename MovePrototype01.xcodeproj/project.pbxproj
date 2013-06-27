@@ -18,6 +18,17 @@
 		8880045F1773651E00CDEC07 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004561773651E00CDEC07 /* UIImageView+AFNetworking.m */; };
 		8899B4321772506600613D90 /* MoveEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8899B4311772506600613D90 /* MoveEditViewController.m */; };
 		88D8CB70176E903D0044DF85 /* MoveCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D8CB6F176E903D0044DF85 /* MoveCreateViewController.m */; };
+		88DDC3EF177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DDC3EE177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m */; };
+		88DDC3FE177CBDE900E7CB53 /* EGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DDC3F4177CBDE900E7CB53 /* EGORefreshTableHeaderView.m */; };
+		88DDC3FF177CBDE900E7CB53 /* blackArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DDC3F6177CBDE900E7CB53 /* blackArrow.png */; };
+		88DDC400177CBDE900E7CB53 /* blackArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DDC3F7177CBDE900E7CB53 /* blackArrow@2x.png */; };
+		88DDC401177CBDE900E7CB53 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DDC3F8177CBDE900E7CB53 /* blueArrow.png */; };
+		88DDC402177CBDE900E7CB53 /* blueArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DDC3F9177CBDE900E7CB53 /* blueArrow@2x.png */; };
+		88DDC403177CBDE900E7CB53 /* grayArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DDC3FA177CBDE900E7CB53 /* grayArrow.png */; };
+		88DDC404177CBDE900E7CB53 /* grayArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DDC3FB177CBDE900E7CB53 /* grayArrow@2x.png */; };
+		88DDC405177CBDE900E7CB53 /* whiteArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DDC3FC177CBDE900E7CB53 /* whiteArrow.png */; };
+		88DDC406177CBDE900E7CB53 /* whiteArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88DDC3FD177CBDE900E7CB53 /* whiteArrow@2x.png */; };
+		88DDC408177CBE8F00E7CB53 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88DDC407177CBE8F00E7CB53 /* QuartzCore.framework */; };
 		88E7558E176AB479009F2AF4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E7558D176AB479009F2AF4 /* UIKit.framework */; };
 		88E75590176AB479009F2AF4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E7558F176AB479009F2AF4 /* Foundation.framework */; };
 		88E75592176AB479009F2AF4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88E75591176AB479009F2AF4 /* CoreGraphics.framework */; };
@@ -58,6 +69,19 @@
 		8899B4311772506600613D90 /* MoveEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveEditViewController.m; sourceTree = "<group>"; };
 		88D8CB6E176E903D0044DF85 /* MoveCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveCreateViewController.h; sourceTree = "<group>"; };
 		88D8CB6F176E903D0044DF85 /* MoveCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveCreateViewController.m; sourceTree = "<group>"; };
+		88DDC3ED177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+NetworkActivityManager.h"; sourceTree = "<group>"; };
+		88DDC3EE177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+NetworkActivityManager.m"; sourceTree = "<group>"; };
+		88DDC3F3177CBDE900E7CB53 /* EGORefreshTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EGORefreshTableHeaderView.h; sourceTree = "<group>"; };
+		88DDC3F4177CBDE900E7CB53 /* EGORefreshTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EGORefreshTableHeaderView.m; sourceTree = "<group>"; };
+		88DDC3F6177CBDE900E7CB53 /* blackArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blackArrow.png; sourceTree = "<group>"; };
+		88DDC3F7177CBDE900E7CB53 /* blackArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackArrow@2x.png"; sourceTree = "<group>"; };
+		88DDC3F8177CBDE900E7CB53 /* blueArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueArrow.png; sourceTree = "<group>"; };
+		88DDC3F9177CBDE900E7CB53 /* blueArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blueArrow@2x.png"; sourceTree = "<group>"; };
+		88DDC3FA177CBDE900E7CB53 /* grayArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = grayArrow.png; sourceTree = "<group>"; };
+		88DDC3FB177CBDE900E7CB53 /* grayArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "grayArrow@2x.png"; sourceTree = "<group>"; };
+		88DDC3FC177CBDE900E7CB53 /* whiteArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteArrow.png; sourceTree = "<group>"; };
+		88DDC3FD177CBDE900E7CB53 /* whiteArrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whiteArrow@2x.png"; sourceTree = "<group>"; };
+		88DDC407177CBE8F00E7CB53 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		88E7558A176AB479009F2AF4 /* MovePrototype01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovePrototype01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E7558D176AB479009F2AF4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		88E7558F176AB479009F2AF4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -87,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				88DDC408177CBE8F00E7CB53 /* QuartzCore.framework in Frameworks */,
 				88E7558E176AB479009F2AF4 /* UIKit.framework in Frameworks */,
 				88E75590176AB479009F2AF4 /* Foundation.framework in Frameworks */,
 				88E75592176AB479009F2AF4 /* CoreGraphics.framework in Frameworks */,
@@ -122,9 +147,51 @@
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
+		88DDC3F0177CBDE800E7CB53 /* EGOTableViewPullRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				88DDC3F1177CBDE900E7CB53 /* Classes */,
+				88DDC3F5177CBDE900E7CB53 /* Resources */,
+			);
+			path = EGOTableViewPullRefresh;
+			sourceTree = "<group>";
+		};
+		88DDC3F1177CBDE900E7CB53 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				88DDC3F2177CBDE900E7CB53 /* View */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		88DDC3F2177CBDE900E7CB53 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				88DDC3F3177CBDE900E7CB53 /* EGORefreshTableHeaderView.h */,
+				88DDC3F4177CBDE900E7CB53 /* EGORefreshTableHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		88DDC3F5177CBDE900E7CB53 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				88DDC3F6177CBDE900E7CB53 /* blackArrow.png */,
+				88DDC3F7177CBDE900E7CB53 /* blackArrow@2x.png */,
+				88DDC3F8177CBDE900E7CB53 /* blueArrow.png */,
+				88DDC3F9177CBDE900E7CB53 /* blueArrow@2x.png */,
+				88DDC3FA177CBDE900E7CB53 /* grayArrow.png */,
+				88DDC3FB177CBDE900E7CB53 /* grayArrow@2x.png */,
+				88DDC3FC177CBDE900E7CB53 /* whiteArrow.png */,
+				88DDC3FD177CBDE900E7CB53 /* whiteArrow@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		88E75581176AB478009F2AF4 = {
 			isa = PBXGroup;
 			children = (
+				88DDC3F0177CBDE800E7CB53 /* EGOTableViewPullRefresh */,
 				888004431773651E00CDEC07 /* AFNetworking */,
 				88E75593176AB479009F2AF4 /* MovePrototype01 */,
 				88E7558C176AB479009F2AF4 /* Frameworks */,
@@ -143,6 +210,7 @@
 		88E7558C176AB479009F2AF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				88DDC407177CBE8F00E7CB53 /* QuartzCore.framework */,
 				88E7558D176AB479009F2AF4 /* UIKit.framework */,
 				88E7558F176AB479009F2AF4 /* Foundation.framework */,
 				88E75591176AB479009F2AF4 /* CoreGraphics.framework */,
@@ -159,6 +227,8 @@
 				88E755B3176AC79E009F2AF4 /* Activity.h */,
 				88E755B6176ACC3D009F2AF4 /* ActivityDataController.h */,
 				88E755B7176ACC3D009F2AF4 /* ActivityDataController.m */,
+				88DDC3ED177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.h */,
+				88DDC3EE177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m */,
 				88E755B4176AC79E009F2AF4 /* Activity.m */,
 				88E7559D176AB479009F2AF4 /* MoveAppDelegate.m */,
 				88E755A5176AB479009F2AF4 /* MainStoryboard.storyboard */,
@@ -244,6 +314,14 @@
 				88E755A2176AB479009F2AF4 /* Default@2x.png in Resources */,
 				88E755A4176AB479009F2AF4 /* Default-568h@2x.png in Resources */,
 				88E755A7176AB479009F2AF4 /* MainStoryboard.storyboard in Resources */,
+				88DDC3FF177CBDE900E7CB53 /* blackArrow.png in Resources */,
+				88DDC400177CBDE900E7CB53 /* blackArrow@2x.png in Resources */,
+				88DDC401177CBDE900E7CB53 /* blueArrow.png in Resources */,
+				88DDC402177CBDE900E7CB53 /* blueArrow@2x.png in Resources */,
+				88DDC403177CBDE900E7CB53 /* grayArrow.png in Resources */,
+				88DDC404177CBDE900E7CB53 /* grayArrow@2x.png in Resources */,
+				88DDC405177CBDE900E7CB53 /* whiteArrow.png in Resources */,
+				88DDC406177CBDE900E7CB53 /* whiteArrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,6 +349,8 @@
 				8880045D1773651E00CDEC07 /* AFURLConnectionOperation.m in Sources */,
 				8880045E1773651E00CDEC07 /* AFXMLRequestOperation.m in Sources */,
 				8880045F1773651E00CDEC07 /* UIImageView+AFNetworking.m in Sources */,
+				88DDC3EF177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m in Sources */,
+				88DDC3FE177CBDE900E7CB53 /* EGORefreshTableHeaderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

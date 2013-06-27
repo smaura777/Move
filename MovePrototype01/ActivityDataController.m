@@ -12,8 +12,8 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 
-//#define kBaseURL @"http://localhost:3000/activity"
-#define kBaseURL @"http://54.243.233.106:8084/activity" 
+//#define kBaseURL @"http://localhost:8084/activity"
+#define kBaseURL @"http://54.243.233.106:8084/activity"
 
 @interface ActivityDataController()
 
@@ -97,7 +97,13 @@
 
 
 - (void)toggleNetworkActivityIndicatorWith:(BOOL)status  {
-    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:status];
+    if (status)
+        [[UIApplication sharedApplication] Move_pushNetworkActivity];
+    else
+        [[UIApplication sharedApplication] Move_popNetworkActivity];
+    
+    
+        //[[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:status];
 }
 
 
@@ -110,8 +116,11 @@
     [client setDefaultHeader:@"Accept" value:@"application/json"];
     
     [self toggleNetworkActivityIndicatorWith:YES];
+    self.isLoading = YES;
+    
     [client getPath:@"" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // NSLog(@"GET succeeded ");
+         self.isLoading = NO;
          [self toggleNetworkActivityIndicatorWith:NO];
         if (!responseObject)
             return;
@@ -166,6 +175,7 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
          [self toggleNetworkActivityIndicatorWith:NO];
         NSLog(@"GET Failed : %@ ",[error description]);
+         self.isLoading = NO;
     }];
     
 }
@@ -315,6 +325,10 @@
         NSLog(@"update Failed : %@ ",[error description]);
     }];
 
+}
+
+-(void)reload {
+    [self refreshActivityList];
 }
 
 @end

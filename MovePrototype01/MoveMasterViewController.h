@@ -7,11 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EGORefreshTableHeaderView.h"
 
 @class ActivityDataController;
 
 
-@interface MoveMasterViewController : UITableViewController
+@interface MoveMasterViewController : UITableViewController <EGORefreshTableHeaderDelegate> {
+
+EGORefreshTableHeaderView *_refreshHeaderView;
+
+	//  Reloading var should really be your tableviews datasource
+	//  Putting it here for demo purposes
+BOOL _reloading;
+
+}
+
 @property (strong, nonatomic) ActivityDataController   *activityDataController;
 
 - (IBAction)done:(UIStoryboardSegue *)segue;
