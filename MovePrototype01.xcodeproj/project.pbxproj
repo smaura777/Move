@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8858B082177E165F001D8ABA /* MoveSetPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858B081177E165F001D8ABA /* MoveSetPropertiesViewController.m */; };
 		888004571773651E00CDEC07 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004451773651E00CDEC07 /* AFHTTPClient.m */; };
 		888004581773651E00CDEC07 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004471773651E00CDEC07 /* AFHTTPRequestOperation.m */; };
 		888004591773651E00CDEC07 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004491773651E00CDEC07 /* AFImageRequestOperation.m */; };
@@ -47,6 +48,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8858B080177E165F001D8ABA /* MoveSetPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveSetPropertiesViewController.h; sourceTree = "<group>"; };
+		8858B081177E165F001D8ABA /* MoveSetPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveSetPropertiesViewController.m; sourceTree = "<group>"; };
 		888004441773651E00CDEC07 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		888004451773651E00CDEC07 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		888004461773651E00CDEC07 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 				88E7559C176AB479009F2AF4 /* MoveAppDelegate.h */,
 				8899B4301772506600613D90 /* MoveEditViewController.h */,
 				8899B4311772506600613D90 /* MoveEditViewController.m */,
+				8858B080177E165F001D8ABA /* MoveSetPropertiesViewController.h */,
+				8858B081177E165F001D8ABA /* MoveSetPropertiesViewController.m */,
 				88E755B3176AC79E009F2AF4 /* Activity.h */,
 				88E755B6176ACC3D009F2AF4 /* ActivityDataController.h */,
 				88E755B7176ACC3D009F2AF4 /* ActivityDataController.m */,
@@ -355,6 +360,7 @@
 				8880045F1773651E00CDEC07 /* UIImageView+AFNetworking.m in Sources */,
 				88DDC3EF177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m in Sources */,
 				88DDC3FE177CBDE900E7CB53 /* EGORefreshTableHeaderView.m in Sources */,
+				8858B082177E165F001D8ABA /* MoveSetPropertiesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *sets;
 
 @property (weak, nonatomic) IBOutlet UILabel *duration;
-@property (weak, nonatomic) IBOutlet UILabel *tibs;
+
 @property (weak, nonatomic) IBOutlet UILabel *distance;
 
 @property (weak, nonatomic) IBOutlet UILabel *type;

@@ -54,7 +54,6 @@
     self.name.text = [activity activity_name];
     self.type.text = [activity activity_type];
     self.duration.text = [activity duration];
-    self.tibs.text = [activity tibs];
     
     if ([activity.activity_type isEqualToString:@"weight"]){
         self.weight.text = [activity weight];

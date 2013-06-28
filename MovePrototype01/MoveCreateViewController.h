@@ -24,7 +24,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *speed;
 @property (weak, nonatomic) IBOutlet UITextField *name;
 
-@property (weak, nonatomic) IBOutlet UITextField *tibs;
 @property (weak, nonatomic) IBOutlet UITextField *duration;
 @property (weak, nonatomic) IBOutlet UITextField *reps;
 

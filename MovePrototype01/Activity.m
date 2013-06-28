@@ -17,7 +17,6 @@
                             weight:(NSString *)weight
                               reps:(NSString *)reps
                               sets:(NSString *)sets
-                              tibs:(NSString *)tibs
                           duration:(NSString *)duration
 {
     self = [super init];
@@ -29,7 +28,6 @@
         _weight = weight;
         _reps = reps;
         _sets = sets;
-        _tibs = tibs;
         _duration = duration;
         
         return self;
@@ -41,7 +39,6 @@
 -(id)initForCardioWithName:(NSString *)name
                       reps:(NSString *)reps
                       sets:(NSString *)sets
-                      tibs:(NSString *)tibs
                   distance:(NSString *)distance
                      speed:(NSString *)speed
                   duration:(NSString *)duration
@@ -55,7 +52,6 @@
         _speed = speed;
         _reps = reps;
         _sets = sets;
-        _tibs = tibs;
         _duration = duration;
         
         return self;

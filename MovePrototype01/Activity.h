@@ -19,7 +19,6 @@
 @property (nonatomic,copy) NSString *sets;
 @property (nonatomic,copy) NSString *distance;
 @property (nonatomic,copy) NSString *speed;
-@property (nonatomic,copy) NSString *tibs;
 @property (nonatomic,copy) NSString *duration;
 
 
@@ -29,14 +28,12 @@
           weight:(NSString *)weight
           reps:(NSString *)reps
           sets:(NSString *)sets
-          tibs:(NSString *)tibs
           duration:(NSString *)duration;
 
 
 -(id)initForCardioWithName:(NSString *)name
             reps:(NSString *)reps
             sets:(NSString *)sets
-            tibs:(NSString *)tibs
             distance:(NSString *)distance
             speed:(NSString *)speed
             duration:(NSString *)duration;

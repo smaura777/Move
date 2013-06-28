@@ -159,7 +159,7 @@
           (self.speed.text): nil;
         temp.duration = ([self.duration.text length]) ?
           (self.duration.text): nil;
-        temp.tibs = ([self.tibs.text length]) ? (self.tibs.text): nil;
+        
           
         self.activity = temp;
           
