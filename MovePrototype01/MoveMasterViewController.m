@@ -30,6 +30,7 @@
 {
     [super awakeFromNib];
     self.activityDataController = [ActivityDataController sharedInstance];
+    [self.activityDataController enableReachability];
     
 }
 

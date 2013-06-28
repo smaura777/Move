@@ -12,10 +12,14 @@
 #import "AFHTTPClient.h"
 #import "AFHTTPRequestOperation.h"
 
-//#define kBaseURL @"http://localhost:8084/activity"
+
+    //#define kBaseURL @"http://localhost:8084/activity"
 #define kBaseURL @"http://54.243.233.106:8084/activity"
 
-@interface ActivityDataController()
+@interface ActivityDataController(){
+
+    AFHTTPClient *client ;
+}
 
 - (void)initializeDefaultActivityList;
 - (void)addActivityLog:(Activity *)activity;
@@ -91,10 +95,36 @@
     [self addActivityLog:act];
     [self addActivityLog:act2];
     **/
+    
+    NSString *activityBaseURL = kBaseURL;
+    NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
+    client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
+   
+    
     [self refreshActivityList];
     
 }
 
+
+-(void)enableReachability {
+        //[client ];
+    
+     [client setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+       NSLog(@"****** Reachability status changed to :  %d *******", status);
+       
+         if (status ==  AFNetworkReachabilityStatusUnknown || status == AFNetworkReachabilityStatusNotReachable){
+             UIAlertView *statusChange = [[UIAlertView alloc] initWithTitle:@"Connection status"
+                                                                    message:@"No internet connection"
+                                                                    delegate:nil
+                                                                    cancelButtonTitle:@"Ok"
+                                                                    otherButtonTitles:nil, nil];
+             [statusChange show];
+         }
+         
+         }];
+       
+
+     }
 
 - (void)toggleNetworkActivityIndicatorWith:(BOOL)status  {
     if (status)
@@ -109,19 +139,15 @@
 
 // Refresh list from server 
 -(void)refreshActivityList {
-    NSString *activityBaseURL = kBaseURL; //@"http://localhost:3000/activity";
-    NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
     [client registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [client setDefaultHeader:@"Accept" value:@"application/json"];
     
-    [self toggleNetworkActivityIndicatorWith:YES];
     self.isLoading = YES;
     
     [client getPath:@"" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // NSLog(@"GET succeeded ");
          self.isLoading = NO;
-         [self toggleNetworkActivityIndicatorWith:NO];
+        
         if (!responseObject)
             return;
      
@@ -173,7 +199,6 @@
      
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         [self toggleNetworkActivityIndicatorWith:NO];
         NSLog(@"GET Failed : %@ ",[error description]);
          self.isLoading = NO;
     }];
@@ -232,20 +257,13 @@
     if (activity.duration)
         [ad setObject:activity.duration forKey:@"duration"];
     
-    
-    NSString *activityBaseURL = kBaseURL; //@"http://localhost:3000/activity/";
-    NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
-        //[client registerHTTPOperationClass:[AFJSONRequestOperation class]];
-        //[client setDefaultHeader:@"Accept" value:@"application/json"];
-     [self toggleNetworkActivityIndicatorWith:YES];
+
     [client postPath:@"create" parameters:ad success:^(AFHTTPRequestOperation *operation, id responseObject) {
-         [self toggleNetworkActivityIndicatorWith:NO];
         NSLog(@"POST succeeded ");
         [self refreshActivityList];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         [self toggleNetworkActivityIndicatorWith:NO];
+        
         NSLog(@"POST Failed : %@ ",[error description]);
     }];
 
@@ -258,17 +276,12 @@
     [ad setObject:del.activity_id forKey:@"id"];
     [self.masterActivityList removeObjectAtIndex:theIndex];
     
-    NSString *activityBaseURL = kBaseURL ;//@"http://localhost:3000/activity/";
-    NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
-     [self toggleNetworkActivityIndicatorWith:NO];
     [client deletePath:[ad objectForKey:@"id"] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-         [self toggleNetworkActivityIndicatorWith:NO];
         NSLog(@"DELETE succeeded ");
         [self refreshActivityList];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         [self toggleNetworkActivityIndicatorWith:NO];
+        
         NSLog(@"DELETE Failed : %@ ",[error description]);
     }];
 
@@ -307,21 +320,14 @@
     
     if (up.duration)
         [ad setObject:up.duration forKey:@"duration"];
-
     
-    NSString *activityBaseURL = kBaseURL ; //@"http://localhost:3000/activity/";
-    NSURL *activityBaseUrl = [NSURL URLWithString:activityBaseURL];
-    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:activityBaseUrl];
-    
-     [self toggleNetworkActivityIndicatorWith:YES];
+     
     [client putPath:[ad objectForKey:@"id"] parameters:ad success:^(AFHTTPRequestOperation *operation, id responseObject) {
-         [self toggleNetworkActivityIndicatorWith:NO];
         NSLog(@"update succeeded ");
         [self refreshActivityList];
     
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-         [self toggleNetworkActivityIndicatorWith:NO];
         NSLog(@"update Failed : %@ ",[error description]);
     }];
 

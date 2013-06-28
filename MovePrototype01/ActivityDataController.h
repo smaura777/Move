@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "UIApplication+NetworkActivityManager.h"
 
-@class Activity;
 
+
+@class Activity;
 
 @interface ActivityDataController : NSObject
 
@@ -25,6 +26,8 @@
 - (void)removeActivityAtIndex:(NSUInteger)theIndex;
 - (void)updateActivityAtIndex:(NSUInteger)theIndex;
 -(void)reload;
+-(void)enableReachability;
+
 
 + (id)sharedInstance;
 
