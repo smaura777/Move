@@ -47,7 +47,6 @@
         self.distance.text = [activity distance];
         self.speed.text = [activity speed];
         self.duration.text = [activity duration];
-        self.tibs.text = [activity tibs];
     
     **/
     

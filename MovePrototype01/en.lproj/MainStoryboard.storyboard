@@ -218,38 +218,8 @@
                                             <constraint firstItem="Eqm-ou-H0R" firstAttribute="top" secondItem="n1z-5T-j8M" secondAttribute="top" constant="14" id="oZ5-cQ-m1F"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="eSQ-m4-r0g">
-                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="time between sets" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgc-nn-Nho">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1 m" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVE-bf-weZ">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="qNa-bL-EaX"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="vgc-nn-Nho" firstAttribute="top" secondItem="eSQ-m4-r0g" secondAttribute="top" constant="14" id="4SR-uc-F3T"/>
-                                            <constraint firstItem="vgc-nn-Nho" firstAttribute="leading" secondItem="eSQ-m4-r0g" secondAttribute="leading" constant="7" id="AJv-FE-V8d"/>
-                                            <constraint firstAttribute="trailing" secondItem="kVE-bf-weZ" secondAttribute="trailing" constant="47" id="fY7-jn-xUn"/>
-                                            <constraint firstItem="kVE-bf-weZ" firstAttribute="top" secondItem="eSQ-m4-r0g" secondAttribute="top" constant="11" id="qSD-L6-cS8"/>
-                                        </constraints>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="e25-yA-CBc">
-                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="176" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -282,7 +252,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="gL3-qh-K5f">
-                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="220" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -315,7 +285,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="FYR-ji-P2f">
-                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="264" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -348,7 +318,7 @@
                                         </constraints>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="hVy-Ri-Hze">
-                                        <rect key="frame" x="0.0" y="352" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -402,7 +372,6 @@
                         <outlet property="reps" destination="V0o-AZ-4fE" id="mZh-Cr-sXc"/>
                         <outlet property="sets" destination="v6M-To-MUM" id="d3Q-cQ-gid"/>
                         <outlet property="speed" destination="fGc-k3-rQU" id="diX-kF-j09"/>
-                        <outlet property="tibs" destination="kVE-bf-weZ" id="yXH-u9-lKB"/>
                         <outlet property="type" destination="szP-Zj-HUe" id="Z8G-to-wCX"/>
                         <outlet property="weight" destination="JUB-o9-jAZ" id="LAx-5T-hI7"/>
                     </connections>
@@ -1009,37 +978,8 @@
                                             <constraint firstItem="RPi-qs-gBN" firstAttribute="centerY" secondItem="e5V-m5-xqf" secondAttribute="centerY" type="default" id="utt-Ai-XZ7"/>
                                         </constraints>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Xfj-gD-Zao">
-                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="time between sets" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6ny-19-BYN">
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="215" id="Cud-Ay-c18"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                                </textField>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tibs" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkE-ec-bXv">
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="qkE-ec-bXv" firstAttribute="leading" secondItem="Xfj-gD-Zao" secondAttribute="leading" constant="10" id="90D-al-rDZ"/>
-                                            <constraint firstAttribute="trailing" secondItem="6ny-19-BYN" secondAttribute="trailing" constant="20" type="default" id="ZJt-EV-lZx"/>
-                                            <constraint firstItem="qkE-ec-bXv" firstAttribute="top" secondItem="Xfj-gD-Zao" secondAttribute="top" constant="11" id="m8E-1c-nQf"/>
-                                            <constraint firstItem="6ny-19-BYN" firstAttribute="centerY" secondItem="Xfj-gD-Zao" secondAttribute="centerY" type="default" id="uDy-FS-muU"/>
-                                        </constraints>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RNk-x7-wMb">
-                                        <rect key="frame" x="0.0" y="352" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="308" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1094,7 +1034,6 @@
                         <outlet property="reps" destination="Zpj-iT-ZoP" id="qn7-Kp-3Ud"/>
                         <outlet property="sets" destination="cnO-se-XKD" id="zbo-tM-Ja1"/>
                         <outlet property="speed" destination="rXA-u3-Jn8" id="pyl-8O-YfL"/>
-                        <outlet property="tibs" destination="6ny-19-BYN" id="eHk-dM-LOQ"/>
                         <outlet property="type" destination="Mhy-A9-JTR" id="Jtf-h4-U7b"/>
                         <outlet property="weight" destination="quN-7z-6Go" id="Tad-vw-Is9"/>
                     </connections>
@@ -1141,6 +1080,71 @@
             <point key="canvasLocation" x="1975" y="24"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="MoveCreateViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoveCreateViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="distance" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="duration" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="reps" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sets" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="speed" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="type" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="weight" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MoveDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoveDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="distance" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="duration" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="name" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="reps" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="sets" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="speed" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="type" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="weight" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="MoveEditViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoveEditViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="distance" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="duration" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="name" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="reps" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="sets" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="speed" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="type" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="weight" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="MoveMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoveMasterViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="cancel:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="done:" candidateClass="UIStoryboardSegue"/>
+            </relationships>
+        </class>
+        <class className="MoveSetPropertiesViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoveSetPropertiesViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="updateProperty:"/>
+                <relationship kind="outlet" name="propertyLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="propertySlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="propertyValue" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
