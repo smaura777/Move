@@ -13,8 +13,8 @@
 #import "AFHTTPRequestOperation.h"
 
 
-#define kBaseURL @"http://localhost:8084/activity"
-    //#define kBaseURL @"http://54.243.233.106:8084/activity"
+//#define kBaseURL @"http://localhost:8084/activity"
+#define kBaseURL @"http://54.243.233.106:8084/activity"
 
 @interface ActivityDataController(){
 
