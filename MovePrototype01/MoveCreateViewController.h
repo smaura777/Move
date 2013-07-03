@@ -27,4 +27,15 @@
 @property (weak, nonatomic) IBOutlet UITextField *duration;
 @property (weak, nonatomic) IBOutlet UITextField *reps;
 
+// Labels
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *weightLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *repsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *setsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *speedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+
 @end

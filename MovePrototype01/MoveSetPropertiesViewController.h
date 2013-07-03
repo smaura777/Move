@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MoveSetPropertiesViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *propertyValue;
-@property (weak, nonatomic) IBOutlet UILabel *propertyLabel;
-@property (weak, nonatomic) IBOutlet UISlider *propertySlider;
-- (IBAction)updateProperty:(id)sender;
+@interface MoveSetPropertiesViewController : UITableViewController
+
+//@property (weak, nonatomic) IBOutlet UILabel *propertyValue;
+//@property (weak, nonatomic) IBOutlet UILabel *propertyLabel;
+//@property (weak, nonatomic) IBOutlet UISlider *propertySlider;
+//- (IBAction)updateProperty:(id)sender;
 
 @end
