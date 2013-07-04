@@ -11,6 +11,9 @@
 
 
 @interface MoveCreateViewController : UITableViewController <UITextFieldDelegate>
+{
+    NSDictionary *activitySettings;
+}
 
 @property (strong,nonatomic) Activity *activity;
 
@@ -37,5 +40,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *distanceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *speedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
+
+
 
 @end

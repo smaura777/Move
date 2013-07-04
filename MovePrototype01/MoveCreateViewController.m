@@ -16,6 +16,17 @@
 
 @implementation MoveCreateViewController
 
+-(void)awakeFromNib{
+    [super awakeFromNib];
+    // Additional setup
+    NSArray *activity_type = [NSArray arrayWithObjects:@"Cardio training", @"Strenght training", nil];
+    NSArray *cardio = [NSArray arrayWithObjects:@"Name",@"Speed",@"Duration",@"Distance", nil];
+    NSArray *weight = [NSArray arrayWithObjects:@"Name",@"Sets",@"Reps",@"Duration", nil];
+    activitySettings = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:cardio,weight, nil] forKeys:activity_type];
+    NSLog(@"key count   == %d", [activitySettings count]);
+}
+
+
 //- (id)initWithStyle:(UITableViewStyle)style
 //{
 //    self = [super initWithStyle:style];
@@ -42,42 +53,47 @@
     // Dispose of any resources that can be recreated.
 }
 
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//#warning Potentially incomplete method implementation.
-//    // Return the number of sections.
-//    return 0;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//#warning Incomplete method implementation.
-//    // Return the number of rows in the section.
-//    return 0;
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-//    
-//    // Configure the cell...
-//    
-//    return cell;
-//}
+#pragma mark - Table view data source
 
-/*
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+
+    // Return the number of rows in the section.
+     return [activitySettings count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *CellIdentifier = @"basicCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    // Configure the cell...
+    if (indexPath.row == 0){
+        [cell.textLabel setText: [[activitySettings allKeys] objectAtIndex:0]];
+    }
+    else {
+        [cell.textLabel setText: [[activitySettings allKeys] objectAtIndex:1]];
+    }
+    
+    return cell;
+}
+
+
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    return NO;
 }
-*/
 
-/*
+
+
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -89,23 +105,24 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
 }
-*/
 
-/*
+
+
 // Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+//- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+//{
+//    
+//}
 
-/*
+
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the item to be re-orderable.
-    return YES;
+    return NO;
 }
-*/
+
 
 #pragma mark - Table view delegate
 
@@ -120,6 +137,11 @@
      */
 }
 
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return @"Workout type";
+}
 
 #pragma mark - textfield protocol
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
