@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface MoveSetPropertiesViewController : UITableViewController
+{
+    NSArray *_data;
+    NSArray *_dataKey;
+}
+
+@property (nonatomic,strong) NSString *exerciseType;
+@property (nonatomic,strong) NSArray *weightTrainingProperties;
+@property (nonatomic,strong) NSArray *cardioTrainingProperties;
 
 //@property (weak, nonatomic) IBOutlet UILabel *propertyValue;
 //@property (weak, nonatomic) IBOutlet UILabel *propertyLabel;

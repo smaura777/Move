@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iUP-Z1-gUn">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Move Set Properties View Controller-->
+        <scene sceneID="cVk-jI-I48">
+            <objects>
+                <tableViewController storyboardIdentifier="MSPVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9dk-RW-zsR" customClass="MoveSetPropertiesViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lH7-pc-duP">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="propDetail" id="ggk-UG-q98">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9dk-RW-zsR" id="LYk-EF-Dt8"/>
+                            <outlet property="delegate" destination="9dk-RW-zsR" id="NPg-TN-DDo"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="BFY-jo-jTs">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="mMa-qm-zxT">
+                            <connections>
+                                <segue destination="CMz-Zh-vnj" kind="unwind" identifier="mspvc_cancel" unwindAction="cancel:" id="dqE-dO-aAt"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Jx6-5N-N1R">
+                            <connections>
+                                <segue destination="CMz-Zh-vnj" kind="unwind" identifier="mspvc_done" unwindAction="done:" id="xxv-CX-1Yh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5w7-2W-M1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="CMz-Zh-vnj" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="567" y="29"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="48Y-yW-bUx">
+            <objects>
+                <navigationController id="iUP-Z1-gUn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x8X-51-jZO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9dk-RW-zsR" kind="relationship" relationship="rootViewController" id="Lcb-eZ-RN1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5YP-6H-g5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="111" y="29"/>
+        </scene>
+    </scenes>
+    <classes>
+        <class className="MoveSetPropertiesViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoveSetPropertiesViewController.h"/>
+        </class>
+    </classes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

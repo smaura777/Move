@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8858B082177E165F001D8ABA /* MoveSetPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8858B081177E165F001D8ABA /* MoveSetPropertiesViewController.m */; };
+		886381211785FCA7007BDBF1 /* propertySetter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 886381201785FCA7007BDBF1 /* propertySetter.storyboard */; };
+		8863812317865CF9007BDBF1 /* SliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8863812217865CF9007BDBF1 /* SliderCell.xib */; };
+		8863812617866070007BDBF1 /* SliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8863812517866070007BDBF1 /* SliderCell.m */; };
 		888004571773651E00CDEC07 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004451773651E00CDEC07 /* AFHTTPClient.m */; };
 		888004581773651E00CDEC07 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004471773651E00CDEC07 /* AFHTTPRequestOperation.m */; };
 		888004591773651E00CDEC07 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004491773651E00CDEC07 /* AFImageRequestOperation.m */; };
@@ -50,6 +53,10 @@
 /* Begin PBXFileReference section */
 		8858B080177E165F001D8ABA /* MoveSetPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveSetPropertiesViewController.h; sourceTree = "<group>"; };
 		8858B081177E165F001D8ABA /* MoveSetPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveSetPropertiesViewController.m; sourceTree = "<group>"; };
+		886381201785FCA7007BDBF1 /* propertySetter.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = propertySetter.storyboard; sourceTree = "<group>"; };
+		8863812217865CF9007BDBF1 /* SliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SliderCell.xib; sourceTree = "<group>"; };
+		8863812417866070007BDBF1 /* SliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SliderCell.h; sourceTree = "<group>"; };
+		8863812517866070007BDBF1 /* SliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SliderCell.m; sourceTree = "<group>"; };
 		888004441773651E00CDEC07 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		888004451773651E00CDEC07 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		888004461773651E00CDEC07 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -230,10 +237,14 @@
 			children = (
 				88E7559C176AB479009F2AF4 /* MoveAppDelegate.h */,
 				8899B4301772506600613D90 /* MoveEditViewController.h */,
+				8863812417866070007BDBF1 /* SliderCell.h */,
+				8863812517866070007BDBF1 /* SliderCell.m */,
 				8899B4311772506600613D90 /* MoveEditViewController.m */,
 				8858B080177E165F001D8ABA /* MoveSetPropertiesViewController.h */,
 				8858B081177E165F001D8ABA /* MoveSetPropertiesViewController.m */,
+				8863812217865CF9007BDBF1 /* SliderCell.xib */,
 				88E755B3176AC79E009F2AF4 /* Activity.h */,
+				886381201785FCA7007BDBF1 /* propertySetter.storyboard */,
 				88E755B4176AC79E009F2AF4 /* Activity.m */,
 				88E755B6176ACC3D009F2AF4 /* ActivityDataController.h */,
 				88E755B7176ACC3D009F2AF4 /* ActivityDataController.m */,
@@ -331,6 +342,8 @@
 				88DDC404177CBDE900E7CB53 /* grayArrow@2x.png in Resources */,
 				88DDC405177CBDE900E7CB53 /* whiteArrow.png in Resources */,
 				88DDC406177CBDE900E7CB53 /* whiteArrow@2x.png in Resources */,
+				886381211785FCA7007BDBF1 /* propertySetter.storyboard in Resources */,
+				8863812317865CF9007BDBF1 /* SliderCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +374,7 @@
 				88DDC3EF177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m in Sources */,
 				88DDC3FE177CBDE900E7CB53 /* EGORefreshTableHeaderView.m in Sources */,
 				8858B082177E165F001D8ABA /* MoveSetPropertiesViewController.m in Sources */,
+				8863812617866070007BDBF1 /* SliderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

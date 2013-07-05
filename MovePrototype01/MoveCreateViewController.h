@@ -42,5 +42,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *durationLabel;
 
 
+- (IBAction)done:(UIStoryboardSegue *)segue;
+- (IBAction)cancel:(UIStoryboardSegue *)segue;
 
 @end

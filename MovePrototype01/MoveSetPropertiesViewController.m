@@ -7,6 +7,8 @@
 //
 
 #import "MoveSetPropertiesViewController.h"
+#import "SliderCell.h"
+
 
 @interface MoveSetPropertiesViewController ()
 
@@ -18,6 +20,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    
     
 }
 
@@ -36,6 +39,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    //[tableView registerNib:[UINib nibWithNibName:CellIdentifier bundle:nil] forCellReuseIdentifier:CellIdentifier];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"SliderCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"sliderCell"];
+    
+    if ([self.exerciseType isEqualToString:@"weight"]){
+        self.weightTrainingProperties = [NSArray
+                                        arrayWithObjects:@[@"name"],@[@"reps",@"sets"],@[@"Duration"], nil];
+        
+        _dataKey = [NSArray arrayWithObjects:@"Exercise Name",@"Reps & Sets",@"Duration", nil];
+        _data = _weightTrainingProperties;
+    }
+    
+    if ([self.exerciseType isEqualToString:@"cardio"]){
+        _dataKey = [NSArray arrayWithObjects:@"Exercise Name",@"Reps & Sets",@"Duration", nil];
+        self.cardioTrainingProperties = [NSArray
+                                        arrayWithObjects:@[@"Select exercise"],@[@"reps",@"sets"],@[@"distance",@"speed",@"Duration"], nil];
+        
+         _data = _cardioTrainingProperties;
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,42 +69,60 @@
     // Dispose of any resources that can be recreated.
 }
 
-//- (IBAction)updateProperty:(id)sender {
-//    UISlider *slide = sender;
-//    
-//    NSLog(@"Value changed : %f ", slide.value);
-//    self.propertyValue.text = [[NSNumber numberWithInt:(int)slide.value] stringValue];
-//    
-//}
+
 
 
 #pragma 
 #pragma - Table View methods
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CGFloat height = 46.0;
+    
+    if (indexPath.section > 0){
+        height = 156.0;
+    }
+
+   return height;
+
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 2;
+    return [_dataKey count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return  [[_data objectAtIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"propDetail";
+    static NSString *CustomIdentifier = @"sliderCell";
+    UITableViewCell *anyCell = nil;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (indexPath.section > 0){
+        SliderCell *cell = [tableView dequeueReusableCellWithIdentifier:CustomIdentifier];
+        
+        if (!cell){
+            //cell = [[SliderCell alloc] init];
+        }
+        
+        [cell.measure setText: [[_data objectAtIndex:indexPath.section]  objectAtIndex:indexPath.row] ];
+        [cell.unit setText:@"Miles" ];
+        anyCell = cell;
+        
+    }
+    else {
+      UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+      [[cell textLabel] setText: [[_data objectAtIndex:indexPath.section]  objectAtIndex:indexPath.row] ];
+        anyCell = cell;
+     
+    }
     
-    
-    
-    [[cell textLabel] setText:@"My label"];
-    
-    [[cell detailTextLabel] setText:@"my detail"];
-    
-    return cell;
+    return anyCell;
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -98,5 +141,9 @@
     }
 }
 
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [_dataKey objectAtIndex:section];
+}
 
 @end

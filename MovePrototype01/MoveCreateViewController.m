@@ -8,6 +8,7 @@
 
 #import "MoveCreateViewController.h"
 #import "ActivityDataController.h"
+#import "MoveSetPropertiesViewController.h"
 #import "Activity.h"
 
 @interface MoveCreateViewController ()
@@ -135,6 +136,29 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    NSLog(@"Row %d  in column %d selected ", indexPath.row, indexPath.section);
+    UIStoryboard *propertySetter = [UIStoryboard storyboardWithName:@"propertySetter" bundle:[NSBundle mainBundle]];
+    //MoveSetPropertiesViewController *msp = [[[propertySetter instantiateInitialViewController] viewControllers] objectAtIndex:0];
+    
+    //MoveSetPropertiesViewController *msp = [propertySetter instantiateViewControllerWithIdentifier:@"MSPVC"];
+    UINavigationController *mspNav = [propertySetter instantiateInitialViewController];
+    
+    MoveSetPropertiesViewController *msp = [[mspNav viewControllers] objectAtIndex:0];
+    
+    // id msp = [[propertySetter instantiateInitialViewController] viewControllers];
+    
+    NSLog(@"vcs = %@",[msp description] );
+    
+    //[[msp objectAtIndex:0] setExerciseType:@"weight"];
+    
+    if (indexPath.row == 0)
+      msp.exerciseType  = @"weight";
+    else
+         msp.exerciseType  = @"cardio";
+    
+    
+    
+    [self presentViewController:mspNav animated:YES completion:nil];
 }
 
 
@@ -189,5 +213,22 @@
         
     }
 }
+
+
+- (IBAction)done:(UIStoryboardSegue *)segue {
+    if ([segue.identifier isEqualToString:@"mspvc_done" ]){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+    NSLog(@"Done clicked");
+}
+
+- (IBAction)cancel:(UIStoryboardSegue *)segue {
+    if ([segue.identifier isEqualToString:@"mspvc_cancel" ]){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    NSLog(@"Cancel clicked");
+}
+
 
 @end
