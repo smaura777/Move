@@ -25,6 +25,7 @@
 - (void)addActivityLog:(Activity *)activity;
 - (void)refreshActivityList;
 - (void)toggleNetworkActivityIndicatorWith:(BOOL)status;
+- (void)updateLookupData;
 
 
 @end
@@ -336,5 +337,66 @@
 -(void)reload {
     [self refreshActivityList];
 }
+
+
+// Lookup data
+
+
+- (void)updateLookupData {
+    NSArray *cardioOutDoor = [NSArray arrayWithObjects:@"jogging",@"biking", @"swimming",@"stair climb",
+                        @"jumping rope",@"walking",@"rowing",nil];
+    
+    NSArray *cardioInDoor =[NSArray arrayWithObjects:
+                            @"treadmil run",@"tradmil walk",@"stepper",@"bike",
+                            @"elliptical", @"rowing",@"jumping rope", @"swimming",@"stair climb"nil];
+
+    
+    NSArray *name = [NSArray arrayWithObjects:cardioInDoor,cardioOutDoor nil];
+    
+    
+        
+    NSArray *weightChest =[NSArray arrayWithObjects:
+                            @"floor press",@"bench press",@"incline bench press",@"butterfly",
+                            @"neck press", @"dumbell pullover",@"bodyweight flyes", @"cable chest press",
+                           @"dumbell bench press",@"dumbell flyes",nil];
+    
+    NSArray *weightArms =[NSArray arrayWithObjects:
+                           @"treadmil run",@"tradmil walk",@"stepper",@"bike",
+                           @"elliptical", @"rowing",@"jumping rope", @"swimming",@"stair climb"nil];
+
+    
+    NSArray *weightLeg =[NSArray arrayWithObjects:
+                           @"treadmil run",@"tradmil walk",@"stepper",@"bike",
+                           @"elliptical", @"rowing",@"jumping rope", @"swimming",@"stair climb"nil];
+
+    NSArray *weightAbs =[NSArray arrayWithObjects:
+                           @"treadmil run",@"tradmil walk",@"stepper",@"bike",
+                           @"elliptical", @"rowing",@"jumping rope", @"swimming",@"stair climb"nil];
+
+
+    NSArray *weight = [NSArray arrayWithObjects:weightChest,weightLeg,weightAbs,weightArms, nil];
+    
+    
+    NSDictionary *cardioName = [NSDictionary dictionaryWithObjects:name
+                                forKeys:[NSArray arrayWithObjects:@"indoor",@"outdoor", nil]];
+    
+    NSDictionary *weightName = [NSDictionary dictionaryWithObjects:weight
+                            forKeys:[NSArray arrayWithObjects:@"chest",@"leg",@"abs",@"arms", nil]];
+}
+
+-(NSUInteger)activityCategoryCount {
+
+    return 0;
+}
+-(NSString *)activityCategoryNameAtIndex:(NSUInteger)index {
+    return @"No data";
+}
+
+-(NSUInteger)activityCategoryListAtIndex:(NSUInteger)index {
+    return 0;
+
+}
+
+
 
 @end

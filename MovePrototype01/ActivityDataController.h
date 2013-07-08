@@ -14,9 +14,7 @@
 @class Activity;
 
 @interface ActivityDataController : NSObject
-
 @property (nonatomic, copy) NSMutableArray *masterActivityList;
-
 @property (nonatomic) BOOL isLoading;
 
 
@@ -27,6 +25,58 @@
 - (void)updateActivityAtIndex:(NSUInteger)theIndex;
 -(void)reload;
 -(void)enableReachability;
+
+
+// Activity lookup properties
+// Full data (should be cached)
+@property (nonatomic, copy) NSMutableArray *activityLookupData;
+
+
+/**
+ Type KEYS:
+    
+      cardio :
+                name:
+                        Machine: Jogging , biking rowing, stairmaster
+                        Nature : Jogging , swimming 
+                speed:  
+                       
+                        value:
+ 
+ 
+      weight:
+                name: 
+                       chest: bench press...
+                       shoulder: ....
+                       abs:   ....
+                       arms:
+                       legs: ....
+ 
+                weight: 
+                        
+                         value: 
+                reps:
+ 
+                sets:
+ 
+                duration: 
+                           
+                           value:
+ 
+ 
+ 
+ 
+ */
+
+
+
+// Activity types (cardio | weight)
+-(NSUInteger)activityCategoryCount;
+-(NSString *)activityCategoryNameAtIndex:(NSUInteger)index;
+-(NSUInteger)activityCategoryListAtIndex:(NSUInteger)index;
+
+
+
 
 
 + (id)sharedInstance;

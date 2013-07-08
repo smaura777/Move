@@ -43,6 +43,7 @@
     //[tableView registerNib:[UINib nibWithNibName:CellIdentifier bundle:nil] forCellReuseIdentifier:CellIdentifier];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"SliderCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"sliderCell"];
+    //[self.tableView setBackgroundView:<#(UIView *)#>];
     
     if ([self.exerciseType isEqualToString:@"weight"]){
         self.weightTrainingProperties = [NSArray
