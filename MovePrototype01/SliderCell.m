@@ -29,6 +29,7 @@
 }
 
 - (IBAction)sliderUpdated:(id)sender {
-    NSLog(@"VALUE : %f", [self.slider value]);
+    //NSLog(@"VALUE : %d", (int)[self.slider value]);
+    self.measure.text = [NSString stringWithFormat:@"%d",(int)[self.slider value]];
 }
 @end

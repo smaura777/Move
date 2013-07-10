@@ -158,7 +158,8 @@
     
     
     
-    [self presentViewController:mspNav animated:YES completion:nil];
+    // [self presentViewController:mspNav animated:YES completion:nil];
+    [self.navigationController pushViewController:msp animated:YES];
 }
 
 
@@ -217,7 +218,9 @@
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
     if ([segue.identifier isEqualToString:@"mspvc_done" ]){
-        [self dismissViewControllerAnimated:YES completion:nil];
+       
+        //[self  dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
     NSLog(@"Done clicked");
@@ -225,7 +228,10 @@
 
 - (IBAction)cancel:(UIStoryboardSegue *)segue {
     if ([segue.identifier isEqualToString:@"mspvc_cancel" ]){
-        [self dismissViewControllerAnimated:YES completion:nil];
+        
+        //[self dismissViewControllerAnimated:YES completion:nil];
+        [self.navigationController popViewControllerAnimated:YES];
+        
     }
     NSLog(@"Cancel clicked");
 }

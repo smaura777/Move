@@ -25,7 +25,7 @@
 - (void)addActivityLog:(Activity *)activity;
 - (void)refreshActivityList;
 - (void)toggleNetworkActivityIndicatorWith:(BOOL)status;
-- (void)updateLookupData;
+//- (void)updateLookupData;
 
 
 @end
@@ -341,7 +341,7 @@
 
 // Lookup data
 
-
+/**
 - (void)updateLookupData {
     NSArray *cardioOutDoor = [NSArray arrayWithObjects:@"jogging",@"biking", @"swimming",@"stair climb",
                         @"jumping rope",@"walking",@"rowing",nil];
@@ -383,6 +383,8 @@
     NSDictionary *weightName = [NSDictionary dictionaryWithObjects:weight
                             forKeys:[NSArray arrayWithObjects:@"chest",@"leg",@"abs",@"arms", nil]];
 }
+**/
+
 
 -(NSUInteger)activityCategoryCount {
 
