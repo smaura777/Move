@@ -20,6 +20,8 @@
 		8880045D1773651E00CDEC07 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004521773651E00CDEC07 /* AFURLConnectionOperation.m */; };
 		8880045E1773651E00CDEC07 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004541773651E00CDEC07 /* AFXMLRequestOperation.m */; };
 		8880045F1773651E00CDEC07 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004561773651E00CDEC07 /* UIImageView+AFNetworking.m */; };
+		888E6CD1178E49A100413178 /* NewActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CD0178E49A100413178 /* NewActivityVC.m */; };
+		888E6CD4178E5DAC00413178 /* NameLookupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CD3178E5DAC00413178 /* NameLookupVC.m */; };
 		8899B4321772506600613D90 /* MoveEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8899B4311772506600613D90 /* MoveEditViewController.m */; };
 		88D8CB70176E903D0044DF85 /* MoveCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D8CB6F176E903D0044DF85 /* MoveCreateViewController.m */; };
 		88DDC3EF177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DDC3EE177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m */; };
@@ -76,6 +78,10 @@
 		888004541773651E00CDEC07 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		888004551773651E00CDEC07 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		888004561773651E00CDEC07 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		888E6CCF178E49A100413178 /* NewActivityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewActivityVC.h; sourceTree = "<group>"; };
+		888E6CD0178E49A100413178 /* NewActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewActivityVC.m; sourceTree = "<group>"; };
+		888E6CD2178E5DAC00413178 /* NameLookupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameLookupVC.h; sourceTree = "<group>"; };
+		888E6CD3178E5DAC00413178 /* NameLookupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameLookupVC.m; sourceTree = "<group>"; };
 		8899B4301772506600613D90 /* MoveEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveEditViewController.h; sourceTree = "<group>"; };
 		8899B4311772506600613D90 /* MoveEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveEditViewController.m; sourceTree = "<group>"; };
 		88D8CB6E176E903D0044DF85 /* MoveCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveCreateViewController.h; sourceTree = "<group>"; };
@@ -204,6 +210,10 @@
 		88E75581176AB478009F2AF4 = {
 			isa = PBXGroup;
 			children = (
+				888E6CD2178E5DAC00413178 /* NameLookupVC.h */,
+				888E6CD3178E5DAC00413178 /* NameLookupVC.m */,
+				888E6CCF178E49A100413178 /* NewActivityVC.h */,
+				888E6CD0178E49A100413178 /* NewActivityVC.m */,
 				88DDC3F0177CBDE800E7CB53 /* EGOTableViewPullRefresh */,
 				888004431773651E00CDEC07 /* AFNetworking */,
 				88E75593176AB479009F2AF4 /* MovePrototype01 */,
@@ -375,6 +385,8 @@
 				88DDC3FE177CBDE900E7CB53 /* EGORefreshTableHeaderView.m in Sources */,
 				8858B082177E165F001D8ABA /* MoveSetPropertiesViewController.m in Sources */,
 				8863812617866070007BDBF1 /* SliderCell.m in Sources */,
+				888E6CD1178E49A100413178 /* NewActivityVC.m in Sources */,
+				888E6CD4178E5DAC00413178 /* NameLookupVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

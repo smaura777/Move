@@ -9,6 +9,8 @@
 #import "MoveCreateViewController.h"
 #import "ActivityDataController.h"
 #import "MoveSetPropertiesViewController.h"
+#import "NewActivityVC.h"
+
 #import "Activity.h"
 
 @interface MoveCreateViewController ()
@@ -143,23 +145,23 @@
     //MoveSetPropertiesViewController *msp = [propertySetter instantiateViewControllerWithIdentifier:@"MSPVC"];
     UINavigationController *mspNav = [propertySetter instantiateInitialViewController];
     
-    MoveSetPropertiesViewController *msp = [[mspNav viewControllers] objectAtIndex:0];
+    //MoveSetPropertiesViewController *msp = [[mspNav viewControllers] objectAtIndex:0];
     
     // id msp = [[propertySetter instantiateInitialViewController] viewControllers];
     
-    NSLog(@"vcs = %@",[msp description] );
+    // NSLog(@"vcs = %@",[msp description] );
     
     //[[msp objectAtIndex:0] setExerciseType:@"weight"];
     
-    if (indexPath.row == 0)
-      msp.exerciseType  = @"weight";
-    else
-         msp.exerciseType  = @"cardio";
+//    if (indexPath.row == 0)
+//      msp.exerciseType  = @"weight";
+//    else
+//         msp.exerciseType  = @"cardio";
+//    
     
     
-    
-    // [self presentViewController:mspNav animated:YES completion:nil];
-    [self.navigationController pushViewController:msp animated:YES];
+     [self presentViewController:mspNav animated:YES completion:nil];
+    //[self.navigationController pushViewController:mspNav animated:YES];
 }
 
 
