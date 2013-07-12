@@ -9,6 +9,7 @@
 #import "NewActivityVC.h"
 
 @interface NewActivityVC ()
+-(void)configureView;
 
 @end
 
@@ -26,6 +27,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureView];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -118,15 +120,38 @@
      */
 }
 
+
+#pragma mark - View config
+
+-(void)configureView {
+   _setsLabel.text = @"0";
+   _repetitionLabel.text = @"0";
+   _durationLabel.text = @"0";
+   _distanceLabel.text = @"0";
+    
+}
+
 - (IBAction)setsSliderChanged:(id)sender {
+    UISlider *slider = sender;
+    
+    [_setsLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ] ];
 }
 
 - (IBAction)repetitionSliderChanged:(id)sender {
+    UISlider *slider = sender;
+    
+    [_repetitionLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
 }
 
 - (IBAction)durationSliderChanged:(id)sender {
+    UISlider *slider = sender;
+    
+    [_durationLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
 }
 
 - (IBAction)distanceSliderChanged:(id)sender {
+    UISlider *slider = sender;
+    
+    [_distanceLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
 }
 @end

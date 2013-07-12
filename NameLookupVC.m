@@ -8,7 +8,10 @@
 
 #import "NameLookupVC.h"
 
-@interface NameLookupVC ()
+@interface NameLookupVC (){
+  NSUInteger cellSelected;
+  NSIndexPath *lastIndex;
+}
 
 @end
 
@@ -62,6 +65,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     cell.textLabel.text = @"jumping rope";
     cell.detailTextLabel.text = @"leg muscle strenght";
+  
+    
     // Configure the cell...
     
     return cell;
@@ -117,6 +122,23 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+    
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if ( selectedCell.accessoryType == UITableViewCellAccessoryCheckmark){
+        selectedCell.accessoryType = UITableViewCellAccessoryNone;
+        lastIndex = nil;
+    }
+    else {
+        selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:lastIndex];
+        oldCell.accessoryType = UITableViewCellAccessoryNone;
+        lastIndex = indexPath;
+    }
+    
+    
+    NSLog(@"Selected row %d ", indexPath.row);
+    
 }
 
 #pragma mark - segue
