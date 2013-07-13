@@ -11,6 +11,8 @@
 @interface NameLookupVC (){
   NSUInteger cellSelected;
   NSIndexPath *lastIndex;
+  NSArray *exerciseList;
+    
 }
 
 @end
@@ -35,6 +37,38 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+
+    exerciseList = [NSArray arrayWithObjects:
+                                               [ [Exercise alloc] initWithName:@"Spinning"
+                                              Description:nil Category:@"cardio"
+                                              Image:nil ID:@"001"],
+                    
+                   [ [Exercise alloc] initWithName:@"Threadmil Run"
+                                 Description:@"cardio exercise" Category:@"cardio"
+                                       Image:nil ID:@"002"],
+                    
+                    [ [Exercise alloc] initWithName:@"Outdoor run"
+                                        Description:@"cardio exercise" Category:@"Stationary bike"
+                                              Image:nil ID:@"003"],
+                    
+                    [ [Exercise alloc] initWithName:@"Outdoor biking"
+                                        Description:@"cardio exercise" Category:@"cardio"
+                                              Image:nil ID:@"004"],
+                    
+                    [ [Exercise alloc] initWithName:@"Stationary biking"
+                                        Description:@"cardio exercise" Category:@"cardio"
+                                              Image:nil ID:@"005"],
+                    
+                    [ [Exercise alloc] initWithName:@"Threadmil speed walk"
+                                        Description:@"Low intesity cardio exercise" Category:@"cardio"
+                                              Image:nil ID:@"006"],
+                    
+                    [ [Exercise alloc] initWithName:@"Outdoor speed walk"
+                                        Description:@"Low intesity cardio exercise" Category:@"cardio"
+                                              Image:nil ID:@"007"],
+
+    
+                                            nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,15 +90,16 @@
 {
 //#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 5;
+    return [exerciseList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"nameLokup";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = @"jumping rope";
-    cell.detailTextLabel.text = @"leg muscle strenght";
+    Exercise *item = [exerciseList objectAtIndex:indexPath.row];
+    cell.textLabel.text = [item name];
+    cell.detailTextLabel.text = [item description];
   
     
     // Configure the cell...
@@ -127,10 +162,18 @@
     
     if ( selectedCell.accessoryType == UITableViewCellAccessoryCheckmark){
         selectedCell.accessoryType = UITableViewCellAccessoryNone;
+        if ([_delegate conformsToProtocol:@protocol(NameLookupVCProtocol)]){
+            [_delegate deselectedExecise:[exerciseList objectAtIndex:indexPath.row]];
+        }
         lastIndex = nil;
     }
     else {
         selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        if ([_delegate conformsToProtocol:@protocol(NameLookupVCProtocol)]){
+            [_delegate selectedExecise:[exerciseList objectAtIndex:indexPath.row]];
+        }
+        
         UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:lastIndex];
         oldCell.accessoryType = UITableViewCellAccessoryNone;
         lastIndex = indexPath;
@@ -141,10 +184,5 @@
     
 }
 
-#pragma mark - segue
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-
-}
 
 @end

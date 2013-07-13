@@ -154,4 +154,25 @@
     
     [_distanceLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
 }
+
+#pragma mark - NameLookupVCProtocol methods
+
+-(void)selectedExecise:(Exercise *)exe{
+    self.exercise = exe ;
+}
+
+-(void)deselectedExecise:(Exercise *)exe {
+    if ([[self.exercise exercise_id] isEqual:[exe exercise_id] ]){
+        self.exercise = nil;
+    }
+}
+
+
+#pragma mark - segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"openNameLookup"]){
+        [[segue destinationViewController] setDelegate:self];
+    }
+}
+
 @end

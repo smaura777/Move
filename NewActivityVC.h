@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NameLookupVC.h"
 
-@interface NewActivityVC : UITableViewController
+@interface NewActivityVC : UITableViewController <NameLookupVCProtocol>
 
 @property (weak, nonatomic) IBOutlet UILabel *setsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *repetitionLabel;
@@ -24,5 +25,7 @@
 - (IBAction)repetitionSliderChanged:(id)sender;
 - (IBAction)durationSliderChanged:(id)sender;
 - (IBAction)distanceSliderChanged:(id)sender;
+
+@property (nonatomic,strong) Exercise *exercise;
 
 @end

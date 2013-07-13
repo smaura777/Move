@@ -22,6 +22,7 @@
 		8880045F1773651E00CDEC07 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 888004561773651E00CDEC07 /* UIImageView+AFNetworking.m */; };
 		888E6CD1178E49A100413178 /* NewActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CD0178E49A100413178 /* NewActivityVC.m */; };
 		888E6CD4178E5DAC00413178 /* NameLookupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CD3178E5DAC00413178 /* NameLookupVC.m */; };
+		888E6CD717910D9000413178 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CD617910D9000413178 /* Exercise.m */; };
 		8899B4321772506600613D90 /* MoveEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8899B4311772506600613D90 /* MoveEditViewController.m */; };
 		88D8CB70176E903D0044DF85 /* MoveCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D8CB6F176E903D0044DF85 /* MoveCreateViewController.m */; };
 		88DDC3EF177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DDC3EE177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m */; };
@@ -82,6 +83,8 @@
 		888E6CD0178E49A100413178 /* NewActivityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewActivityVC.m; sourceTree = "<group>"; };
 		888E6CD2178E5DAC00413178 /* NameLookupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NameLookupVC.h; sourceTree = "<group>"; };
 		888E6CD3178E5DAC00413178 /* NameLookupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameLookupVC.m; sourceTree = "<group>"; };
+		888E6CD517910D9000413178 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
+		888E6CD617910D9000413178 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
 		8899B4301772506600613D90 /* MoveEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveEditViewController.h; sourceTree = "<group>"; };
 		8899B4311772506600613D90 /* MoveEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveEditViewController.m; sourceTree = "<group>"; };
 		88D8CB6E176E903D0044DF85 /* MoveCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveCreateViewController.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 			isa = PBXGroup;
 			children = (
 				888E6CD2178E5DAC00413178 /* NameLookupVC.h */,
+				888E6CD517910D9000413178 /* Exercise.h */,
+				888E6CD617910D9000413178 /* Exercise.m */,
 				888E6CD3178E5DAC00413178 /* NameLookupVC.m */,
 				888E6CCF178E49A100413178 /* NewActivityVC.h */,
 				888E6CD0178E49A100413178 /* NewActivityVC.m */,
@@ -387,6 +392,7 @@
 				8863812617866070007BDBF1 /* SliderCell.m in Sources */,
 				888E6CD1178E49A100413178 /* NewActivityVC.m in Sources */,
 				888E6CD4178E5DAC00413178 /* NameLookupVC.m in Sources */,
+				888E6CD717910D9000413178 /* Exercise.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

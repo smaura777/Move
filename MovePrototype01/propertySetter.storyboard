@@ -35,7 +35,7 @@
                                             <constraint firstItem="iPH-F0-s8h" firstAttribute="top" secondItem="ggk-UG-q98" secondAttribute="top" constant="12" id="Hm6-yJ-7vr"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="luk-Y1-Q2b" kind="push" id="zDi-03-t4x"/>
+                                            <segue destination="luk-Y1-Q2b" kind="push" identifier="openNameLookup" id="zDi-03-t4x"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -235,7 +235,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5w7-2W-M1x" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="CMz-Zh-vnj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="567" y="29"/>
+            <point key="canvasLocation" x="585" y="16"/>
         </scene>
         <!--Name LookupVC-->
         <scene sceneID="9c3-W8-hfs">
@@ -277,7 +277,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dUD-B7-ORV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="16"/>
+            <point key="canvasLocation" x="1040" y="29"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="48Y-yW-bUx">
