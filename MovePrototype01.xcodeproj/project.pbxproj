@@ -23,6 +23,9 @@
 		888E6CD1178E49A100413178 /* NewActivityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CD0178E49A100413178 /* NewActivityVC.m */; };
 		888E6CD4178E5DAC00413178 /* NameLookupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CD3178E5DAC00413178 /* NameLookupVC.m */; };
 		888E6CD717910D9000413178 /* Exercise.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CD617910D9000413178 /* Exercise.m */; };
+		888E6CDB179234C900413178 /* NewWeightActivity.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888E6CDA179234C900413178 /* NewWeightActivity.storyboard */; };
+		888E6CDE1792398500413178 /* NewWeightActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CDD1792398500413178 /* NewWeightActivity.m */; };
+		888E6CE117923BAF00413178 /* WeightExerciseLookup.m in Sources */ = {isa = PBXBuildFile; fileRef = 888E6CE017923BAF00413178 /* WeightExerciseLookup.m */; };
 		8899B4321772506600613D90 /* MoveEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8899B4311772506600613D90 /* MoveEditViewController.m */; };
 		88D8CB70176E903D0044DF85 /* MoveCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88D8CB6F176E903D0044DF85 /* MoveCreateViewController.m */; };
 		88DDC3EF177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DDC3EE177CA27D00E7CB53 /* UIApplication+NetworkActivityManager.m */; };
@@ -85,6 +88,11 @@
 		888E6CD3178E5DAC00413178 /* NameLookupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NameLookupVC.m; sourceTree = "<group>"; };
 		888E6CD517910D9000413178 /* Exercise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exercise.h; sourceTree = "<group>"; };
 		888E6CD617910D9000413178 /* Exercise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exercise.m; sourceTree = "<group>"; };
+		888E6CDA179234C900413178 /* NewWeightActivity.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewWeightActivity.storyboard; sourceTree = "<group>"; };
+		888E6CDC1792398500413178 /* NewWeightActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewWeightActivity.h; sourceTree = "<group>"; };
+		888E6CDD1792398500413178 /* NewWeightActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewWeightActivity.m; sourceTree = "<group>"; };
+		888E6CDF17923BAE00413178 /* WeightExerciseLookup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeightExerciseLookup.h; sourceTree = "<group>"; };
+		888E6CE017923BAF00413178 /* WeightExerciseLookup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeightExerciseLookup.m; sourceTree = "<group>"; };
 		8899B4301772506600613D90 /* MoveEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveEditViewController.h; sourceTree = "<group>"; };
 		8899B4311772506600613D90 /* MoveEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoveEditViewController.m; sourceTree = "<group>"; };
 		88D8CB6E176E903D0044DF85 /* MoveCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoveCreateViewController.h; sourceTree = "<group>"; };
@@ -213,7 +221,12 @@
 		88E75581176AB478009F2AF4 = {
 			isa = PBXGroup;
 			children = (
+				888E6CDA179234C900413178 /* NewWeightActivity.storyboard */,
 				888E6CD2178E5DAC00413178 /* NameLookupVC.h */,
+				888E6CDC1792398500413178 /* NewWeightActivity.h */,
+				888E6CDD1792398500413178 /* NewWeightActivity.m */,
+				888E6CDF17923BAE00413178 /* WeightExerciseLookup.h */,
+				888E6CE017923BAF00413178 /* WeightExerciseLookup.m */,
 				888E6CD517910D9000413178 /* Exercise.h */,
 				888E6CD617910D9000413178 /* Exercise.m */,
 				888E6CD3178E5DAC00413178 /* NameLookupVC.m */,
@@ -359,6 +372,7 @@
 				88DDC406177CBDE900E7CB53 /* whiteArrow@2x.png in Resources */,
 				886381211785FCA7007BDBF1 /* propertySetter.storyboard in Resources */,
 				8863812317865CF9007BDBF1 /* SliderCell.xib in Resources */,
+				888E6CDB179234C900413178 /* NewWeightActivity.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +407,8 @@
 				888E6CD1178E49A100413178 /* NewActivityVC.m in Sources */,
 				888E6CD4178E5DAC00413178 /* NameLookupVC.m in Sources */,
 				888E6CD717910D9000413178 /* Exercise.m in Sources */,
+				888E6CDE1792398500413178 /* NewWeightActivity.m in Sources */,
+				888E6CE117923BAF00413178 /* WeightExerciseLookup.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,21 +1,18 @@
 //
-//  NewActivityVC.m
+//  NewWeightActivity.m
 //  MovePrototype01
 //
-//  Created by samuel maura on 7/10/13.
+//  Created by samuel maura on 7/13/13.
 //  Copyright (c) 2013 Self. All rights reserved.
 //
 
-#import "NewActivityVC.h"
-#import "Activity.h"
+#import "NewWeightActivity.h"
 
-
-@interface NewActivityVC ()
--(void)configureView;
+@interface NewWeightActivity ()
 
 @end
 
-@implementation NewActivityVC
+@implementation NewWeightActivity
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -29,11 +26,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self configureView];
-    self.activity = [[Activity alloc] init];
-    self.activity.activity_type = @"cardio";
-    
-    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -56,14 +48,14 @@
 //    // Return the number of sections.
 //    return 0;
 //}
-
+//
 //- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 //{
 //#warning Incomplete method implementation.
 //    // Return the number of rows in the section.
 //    return 0;
 //}
-
+//
 //- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
 //    static NSString *CellIdentifier = @"Cell";
@@ -126,68 +118,15 @@
      */
 }
 
-
-#pragma mark - View config
-
--(void)configureView {
-   _setsLabel.text = @"0";
-   _repetitionLabel.text = @"0";
-   _durationLabel.text = @"0";
-   _distanceLabel.text = @"0";
-    
-}
-
 - (IBAction)setsSliderChanged:(id)sender {
-    UISlider *slider = sender;
-    
-    [_setsLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ] ];
-    self.activity.sets = [NSString stringWithFormat:@"%d", (int)slider.value  ];
 }
 
 - (IBAction)repetitionSliderChanged:(id)sender {
-    UISlider *slider = sender;
-    
-    [_repetitionLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
-    self.activity.reps = [NSString stringWithFormat:@"%d", (int)slider.value  ];
+}
+
+- (IBAction)weightSliderChanged:(id)sender {
 }
 
 - (IBAction)durationSliderChanged:(id)sender {
-    UISlider *slider = sender;
-    
-    [_durationLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
-    self.activity.duration = [NSString stringWithFormat:@"%d", (int)slider.value  ];
 }
-
-- (IBAction)distanceSliderChanged:(id)sender {
-    UISlider *slider = sender;
-    
-    [_distanceLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
-    self.activity.distance = [NSString stringWithFormat:@"%d", (int)slider.value  ];
-}
-
-#pragma mark - NameLookupVCProtocol methods
-
--(void)selectedExecise:(Exercise *)exe{
-    self.exercise = exe ;
-    self.activity.activity_name  = _exercise.name;
-    self.nameLabel.text = _exercise.name;
-    
-    
-}
-
--(void)deselectedExecise:(Exercise *)exe {
-    if ([[self.exercise exercise_id] isEqual:[exe exercise_id] ]){
-        self.exercise = nil;
-        self.activity.activity_name = nil;
-    }
-}
-
-
-#pragma mark - segue
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"openNameLookup"]){
-        [[segue destinationViewController] setDelegate:self];
-    }
-}
-
 @end

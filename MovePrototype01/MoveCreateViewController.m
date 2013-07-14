@@ -139,11 +139,11 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
     NSLog(@"Row %d  in column %d selected ", indexPath.row, indexPath.section);
-    UIStoryboard *propertySetter = [UIStoryboard storyboardWithName:@"propertySetter" bundle:[NSBundle mainBundle]];
+   
     //MoveSetPropertiesViewController *msp = [[[propertySetter instantiateInitialViewController] viewControllers] objectAtIndex:0];
     
     //MoveSetPropertiesViewController *msp = [propertySetter instantiateViewControllerWithIdentifier:@"MSPVC"];
-    UINavigationController *mspNav = [propertySetter instantiateInitialViewController];
+   
     
     //MoveSetPropertiesViewController *msp = [[mspNav viewControllers] objectAtIndex:0];
     
@@ -158,9 +158,18 @@
 //    else
 //         msp.exerciseType  = @"cardio";
 //    
+    if (indexPath.row == 1){
+        UIStoryboard *propertySetter = [UIStoryboard storyboardWithName:@"propertySetter" bundle:[NSBundle mainBundle]];
+        UINavigationController *mspNav = [propertySetter instantiateInitialViewController];
+        [self presentViewController:mspNav animated:YES completion:nil];
+    }
+    else {
+        UIStoryboard *propertySetter = [UIStoryboard storyboardWithName:@"NewWeightActivity" bundle:[NSBundle mainBundle]];
+        UINavigationController *mspNav = [propertySetter instantiateInitialViewController];
+        [self presentViewController:mspNav animated:YES completion:nil];
+
+    }
     
-    
-     [self presentViewController:mspNav animated:YES completion:nil];
     //[self.navigationController pushViewController:mspNav animated:YES];
 }
 
@@ -189,38 +198,15 @@
 
 #pragma - segue
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
-      
-      if ([self.name.text length] && [self.type.text length]){
-        Activity *temp = [[Activity alloc] init];
-        temp.user_id = @"smaura777@gmail.com";
-        temp.activity_name = self.name.text;
-        temp.activity_type = self.type.text;
-        temp.weight = ([self.weight.text length]) ? (self.weight.text): nil;
-            
-        temp.reps = ([self.reps.text length]) ? (self.reps.text): nil;
-        temp.sets = ([self.sets.text length]) ? (self.sets.text): nil;
-        temp.distance = ([self.distance.text length]) ?
-          (self.distance.text): nil;
-            
-        temp.speed = ([self.speed.text length]) ?
-          (self.speed.text): nil;
-        temp.duration = ([self.duration.text length]) ?
-          (self.duration.text): nil;
-        
-          
-        self.activity = temp;
-          
-      }
-        
-    }
-}
 
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
     if ([segue.identifier isEqualToString:@"mspvc_done" ]){
-       
+        
+        NSLog(@"Source VC == %@",[[[segue sourceViewController] activity] activity_name] );
+        NSLog(@"Destination VC == %@",[[segue destinationViewController] description]);
+        self.activity = [[segue sourceViewController] activity];
+        
         //[self  dismissViewControllerAnimated:YES completion:nil];
         [self.navigationController popViewControllerAnimated:YES];
     }

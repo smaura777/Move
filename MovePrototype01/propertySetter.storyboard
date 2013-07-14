@@ -226,6 +226,7 @@
                         <outlet property="distanceSlider" destination="P9D-5e-85k" id="MQ5-Rg-qcN"/>
                         <outlet property="durationLabel" destination="CwW-Ia-kad" id="Xyl-G9-QCJ"/>
                         <outlet property="durationSlider" destination="IMZ-pR-koo" id="ukk-MJ-sWB"/>
+                        <outlet property="nameLabel" destination="iPH-F0-s8h" id="rJS-9e-hyI"/>
                         <outlet property="repetitionLabel" destination="i0J-Kg-vsF" id="VU1-Kh-I36"/>
                         <outlet property="repetitionSlider" destination="SxW-wT-qX3" id="Fbf-5B-DQY"/>
                         <outlet property="setsLabel" destination="NWM-As-wrb" id="rW1-lz-lLH"/>
@@ -316,6 +317,7 @@
                 <relationship kind="outlet" name="distanceSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="repetitionLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="repetitionSlider" candidateClass="UISlider"/>
                 <relationship kind="outlet" name="setsLabel" candidateClass="UILabel"/>

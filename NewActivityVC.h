@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "NameLookupVC.h"
+@class  Activity;
+
+
 
 @interface NewActivityVC : UITableViewController <NameLookupVCProtocol>
+
+@property (nonatomic,strong) Activity * activity;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *setsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *repetitionLabel;
@@ -29,3 +38,4 @@
 @property (nonatomic,strong) Exercise *exercise;
 
 @end
+
