@@ -38,7 +38,7 @@
                                             <constraint firstItem="svf-jH-fe7" firstAttribute="top" secondItem="ymj-T6-ehk" secondAttribute="top" constant="12" id="rj1-t6-ey9"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="OVW-jx-ToT" kind="push" id="MBH-cp-nVP"/>
+                                            <segue destination="OVW-jx-ToT" kind="push" identifier="openWeightNameLookup" id="MBH-cp-nVP"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -60,7 +60,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="N23-1J-FKc">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="N23-1J-FKc">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="171" id="eRu-PX-aKg"/>
                                                     </constraints>
@@ -74,8 +74,8 @@
                                         <constraints>
                                             <constraint firstItem="N23-1J-FKc" firstAttribute="bottom" secondItem="4P5-Z5-iSh" secondAttribute="bottom" type="default" id="2ur-jl-1Hc"/>
                                             <constraint firstItem="N23-1J-FKc" firstAttribute="top" secondItem="I3d-qz-qbA" secondAttribute="top" constant="24" id="5wy-YZ-4Mi"/>
+                                            <constraint firstItem="N23-1J-FKc" firstAttribute="leading" secondItem="I3d-qz-qbA" secondAttribute="leading" constant="119" id="6fW-W3-jQD"/>
                                             <constraint firstItem="4P5-Z5-iSh" firstAttribute="leading" secondItem="I3d-qz-qbA" secondAttribute="leading" constant="18" id="SqF-iy-Kak"/>
-                                            <constraint firstAttribute="trailing" secondItem="N23-1J-FKc" secondAttribute="trailing" constant="20" type="default" id="dJA-YS-fXF"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -97,7 +97,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Nwg-zc-XMV">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="Nwg-zc-XMV">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="171" id="gjq-Ti-nk9"/>
                                                     </constraints>
@@ -109,8 +109,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="Nwg-zc-XMV" firstAttribute="leading" secondItem="Wlx-3e-nac" secondAttribute="leading" constant="119" id="AOf-6h-yUV"/>
                                             <constraint firstItem="Nwg-zc-XMV" firstAttribute="centerY" secondItem="Wlx-3e-nac" secondAttribute="centerY" type="default" id="ASD-Il-pWr"/>
-                                            <constraint firstItem="Nwg-zc-XMV" firstAttribute="leading" secondItem="Wlx-3e-nac" secondAttribute="leading" constant="139" id="Wic-UN-Z6T"/>
                                             <constraint firstItem="Nwg-zc-XMV" firstAttribute="top" secondItem="9LE-DD-o1V" secondAttribute="top" type="default" id="XRe-pk-Y08"/>
                                             <constraint firstItem="9LE-DD-o1V" firstAttribute="leading" secondItem="Wlx-3e-nac" secondAttribute="leading" constant="19" id="v28-zT-1xe"/>
                                         </constraints>
@@ -139,7 +139,7 @@
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OdG-1C-JgV">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="200" translatesAutoresizingMaskIntoConstraints="NO" id="OdG-1C-JgV">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="171" id="Kyw-XB-NHJ"/>
                                                     </constraints>
@@ -152,12 +152,12 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="P62-7Y-738" firstAttribute="top" secondItem="ULz-xe-BNo" secondAttribute="top" constant="29" id="2F5-ra-HqS"/>
-                                            <constraint firstItem="OdG-1C-JgV" firstAttribute="leading" secondItem="ULz-xe-BNo" secondAttribute="leading" constant="139" id="4Ke-xH-myf"/>
                                             <constraint firstItem="sWh-Rc-3G9" firstAttribute="top" secondItem="ULz-xe-BNo" secondAttribute="top" constant="13" id="dv5-Rb-2gI"/>
                                             <constraint firstItem="P62-7Y-738" firstAttribute="leading" secondItem="sWh-Rc-3G9" secondAttribute="leading" type="default" id="eJU-Eb-3we"/>
                                             <constraint firstItem="sWh-Rc-3G9" firstAttribute="leading" secondItem="ULz-xe-BNo" secondAttribute="leading" constant="18" id="hHs-ZF-KvC"/>
+                                            <constraint firstItem="OdG-1C-JgV" firstAttribute="leading" secondItem="ULz-xe-BNo" secondAttribute="leading" constant="119" id="i7e-ys-YEJ"/>
                                             <constraint firstItem="P62-7Y-738" firstAttribute="trailing" secondItem="sWh-Rc-3G9" secondAttribute="trailing" type="default" id="iAk-3h-Wdt"/>
-                                            <constraint firstItem="OdG-1C-JgV" firstAttribute="top" secondItem="ULz-xe-BNo" secondAttribute="top" constant="24" id="ymB-oB-Bga"/>
+                                            <constraint firstItem="OdG-1C-JgV" firstAttribute="centerY" secondItem="ULz-xe-BNo" secondAttribute="centerY" type="default" id="pSA-s4-b15"/>
                                         </constraints>
                                     </tableViewCell>
                                 </cells>
@@ -184,7 +184,7 @@
                                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="DJV-KK-Cde">
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="180" translatesAutoresizingMaskIntoConstraints="NO" id="DJV-KK-Cde">
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="171" id="T4K-Y7-Npg"/>
                                                     </constraints>
@@ -196,12 +196,12 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
+                                            <constraint firstItem="DJV-KK-Cde" firstAttribute="leading" secondItem="POy-T6-VpS" secondAttribute="leading" constant="126" id="901-lT-UzE"/>
                                             <constraint firstItem="eWP-vZ-Pa1" firstAttribute="leading" secondItem="BGY-ca-IhT" secondAttribute="leading" type="default" id="HbR-2a-AmV"/>
-                                            <constraint firstItem="DJV-KK-Cde" firstAttribute="leading" secondItem="POy-T6-VpS" secondAttribute="leading" constant="128" id="Sr4-8X-itR"/>
                                             <constraint firstItem="BGY-ca-IhT" firstAttribute="top" secondItem="POy-T6-VpS" secondAttribute="top" constant="14" id="e4V-bm-mz9"/>
                                             <constraint firstItem="BGY-ca-IhT" firstAttribute="leading" secondItem="POy-T6-VpS" secondAttribute="leading" constant="21" id="eo5-NA-x92"/>
+                                            <constraint firstItem="DJV-KK-Cde" firstAttribute="centerY" secondItem="POy-T6-VpS" secondAttribute="centerY" type="default" id="lU5-mT-4Ep"/>
                                             <constraint firstAttribute="bottom" secondItem="eWP-vZ-Pa1" secondAttribute="bottom" constant="15" id="nne-T8-uE1"/>
-                                            <constraint firstItem="DJV-KK-Cde" firstAttribute="top" secondItem="POy-T6-VpS" secondAttribute="top" constant="24" id="xGs-OO-PKq"/>
                                             <constraint firstItem="eWP-vZ-Pa1" firstAttribute="trailing" secondItem="BGY-ca-IhT" secondAttribute="trailing" type="default" id="zpo-WF-nbj"/>
                                         </constraints>
                                     </tableViewCell>
@@ -225,7 +225,6 @@
                         <outlet property="durationLabel" destination="BGY-ca-IhT" id="3WG-Ky-Lfq"/>
                         <outlet property="durationSlider" destination="DJV-KK-Cde" id="RDS-HF-XeL"/>
                         <outlet property="nameLabel" destination="svf-jH-fe7" id="pXN-iZ-YIf"/>
-                        <outlet property="repetitionSliderChanged" destination="Nwg-zc-XMV" id="5ej-rm-7Li"/>
                         <outlet property="repetitionsLabel" destination="9LE-DD-o1V" id="TI8-HN-GcB"/>
                         <outlet property="repetitionsSlider" destination="Nwg-zc-XMV" id="S7h-DI-zoT"/>
                         <outlet property="setsLabel" destination="4P5-Z5-iSh" id="mVJ-6o-Drt"/>
@@ -237,7 +236,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Df2-IS-HZd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="gOA-ta-dD9" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-496" y="-37"/>
+            <point key="canvasLocation" x="-463" y="-43"/>
         </scene>
         <!--Weight Exercise Lookup-->
         <scene sceneID="dum-8G-e64">
@@ -248,12 +247,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ber-xF-jKy">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WeightnameLokup" textLabel="MDo-WM-cbm" detailTextLabel="5G5-lj-V3E" style="IBUITableViewCellStyleSubtitle" id="Ber-xF-jKy">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDo-WM-cbm">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5G5-lj-V3E">
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.50196078431372548" green="0.50196078431372548" blue="0.50196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                             </tableViewCell>
@@ -267,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7dZ-Fq-Hwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-58" y="-32"/>
+            <point key="canvasLocation" x="-55" y="-38"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="C81-44-0aL">

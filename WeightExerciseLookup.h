@@ -7,7 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+@class Exercise;
+@protocol WeightExerciseLookupProtocol;
+
 
 @interface WeightExerciseLookup : UITableViewController
+
+@property (weak) id<WeightExerciseLookupProtocol> delegate;
+
+@end
+
+
+@protocol WeightExerciseLookupProtocol <NSObject>
+
+-(void)selectedWeightExecise:(Exercise *)exe;
+-(void)deselectedWeightExecise:(Exercise *)exe;
 
 @end

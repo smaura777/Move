@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "WeightExerciseLookup.h"
+#import "Exercise.h"
+#import "Activity.h"
 
-@interface NewWeightActivity : UITableViewController
+
+@interface NewWeightActivity : UITableViewController <WeightExerciseLookupProtocol>
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *setsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *repetitionsLabel;
@@ -25,5 +30,8 @@
 - (IBAction)repetitionSliderChanged:(id)sender;
 - (IBAction)weightSliderChanged:(id)sender;
 - (IBAction)durationSliderChanged:(id)sender;
+
+@property (nonatomic,strong) Exercise *exercise;
+@property (nonatomic,strong) Activity * activity;
 
 @end

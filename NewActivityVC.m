@@ -163,6 +163,7 @@
     
     [_distanceLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
     self.activity.distance = [NSString stringWithFormat:@"%d", (int)slider.value  ];
+   
 }
 
 #pragma mark - NameLookupVCProtocol methods

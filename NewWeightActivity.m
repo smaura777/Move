@@ -26,6 +26,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self configureView];
+    self.activity = [[Activity alloc] init];
+    self.activity.activity_type = @"weight";
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -119,14 +123,66 @@
 }
 
 - (IBAction)setsSliderChanged:(id)sender {
+    UISlider *slider = sender;
+    
+    [_setsLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ] ];
+    self.activity.sets = [NSString stringWithFormat:@"%d", (int)slider.value  ];
 }
 
 - (IBAction)repetitionSliderChanged:(id)sender {
-}
-
-- (IBAction)weightSliderChanged:(id)sender {
+    UISlider *slider = sender;
+    
+    [_repetitionsLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
+    self.activity.reps = [NSString stringWithFormat:@"%d", (int)slider.value  ];
 }
 
 - (IBAction)durationSliderChanged:(id)sender {
+    UISlider *slider = sender;
+    
+    [_durationLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
+    self.activity.duration = [NSString stringWithFormat:@"%d", (int)slider.value  ];
 }
+
+- (IBAction)weightSliderChanged:(id)sender {
+    UISlider *slider = sender;
+    
+    [_weightLabel setText:[NSString stringWithFormat:@"%d", (int)slider.value  ]];
+    self.activity.weight = [NSString stringWithFormat:@"%d", (int)slider.value  ];
+}
+
+
+
+-(void)configureView {
+    
+    _setsLabel.text = @"0";
+    _repetitionsLabel.text = @"0";
+    _durationLabel.text = @"0";
+    _weightLabel.text = @"0";
+}
+
+#pragma mark - segue
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([[segue identifier] isEqualToString:@"openWeightNameLookup"]){
+        [[segue destinationViewController] setDelegate:self];
+    }
+}
+
+
+#pragma mark - Protocol weightname lookup
+
+-(void)selectedWeightExecise:(Exercise *)exe {
+    self.exercise = exe ;
+    self.activity.activity_name  = _exercise.name;
+    self.nameLabel.text = _exercise.name;
+
+}
+
+-(void)deselectedWeightExecise:(Exercise *)exe {
+    if ([[self.exercise exercise_id] isEqual:[exe exercise_id] ]){
+        self.exercise = nil;
+        self.activity.activity_name = nil;
+    }
+}
+
+
 @end

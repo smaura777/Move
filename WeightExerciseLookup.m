@@ -7,8 +7,14 @@
 //
 
 #import "WeightExerciseLookup.h"
+#import "Exercise.h"
 
-@interface WeightExerciseLookup ()
+
+@interface WeightExerciseLookup () {
+ NSUInteger cellSelected;
+ NSIndexPath *lastIndex;
+ NSArray *exerciseList;
+}
 
 @end
 
@@ -32,6 +38,51 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    exerciseList = [NSArray arrayWithObjects:
+                    [ [Exercise alloc] initWithName:@"Bench Press"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"001"],
+                    
+                    [ [Exercise alloc] initWithName:@"Shoulder press"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"002"],
+                    
+                    [ [Exercise alloc] initWithName:@"Leg press"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"003"],
+                
+                    [ [Exercise alloc] initWithName:@"Pectoral fly"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"004"],
+                    
+                    [ [Exercise alloc] initWithName:@"Pull down"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"005"],
+                    
+                    [ [Exercise alloc] initWithName:@"Pull ups"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"006"],
+                    
+                    [ [Exercise alloc] initWithName:@"Shoulder squat"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"007"],
+                    
+                    [ [Exercise alloc] initWithName:@"Dead lift"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"008"],
+
+                    
+                    [ [Exercise alloc] initWithName:@"Arm curls"
+                                        Description:@"weight lift exercise" Category:@"weight"
+                                              Image:nil ID:@"009"],
+
+                    
+                    
+                    nil];
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,26 +95,30 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
+
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+     return [exerciseList count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"WeightnameLokup";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    Exercise *item = [exerciseList objectAtIndex:indexPath.row];
+    cell.textLabel.text = [item name];
+    cell.detailTextLabel.text = [item description];
+    
     
     // Configure the cell...
     
     return cell;
+
 }
 
 /*
@@ -116,6 +171,32 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+
+    
+    UITableViewCell *selectedCell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    if ( selectedCell.accessoryType == UITableViewCellAccessoryCheckmark){
+        selectedCell.accessoryType = UITableViewCellAccessoryNone;
+        if ([_delegate conformsToProtocol:@protocol(WeightExerciseLookupProtocol)]){
+            [_delegate deselectedWeightExecise:[exerciseList objectAtIndex:indexPath.row]];
+        }
+        lastIndex = nil;
+    }
+    else {
+        selectedCell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        if ([_delegate conformsToProtocol:@protocol(WeightExerciseLookupProtocol)]){
+            [_delegate selectedWeightExecise:[exerciseList objectAtIndex:indexPath.row]];
+        }
+        
+        UITableViewCell *oldCell = [tableView cellForRowAtIndexPath:lastIndex];
+        oldCell.accessoryType = UITableViewCellAccessoryNone;
+        lastIndex = indexPath;
+    }
+    
+    
+    NSLog(@"Selected row %d ", indexPath.row);
+
 }
 
 @end
