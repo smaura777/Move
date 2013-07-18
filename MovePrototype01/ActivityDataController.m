@@ -258,7 +258,8 @@
     if (activity.duration)
         [ad setObject:activity.duration forKey:@"duration"];
     
-
+    [client setDefaultHeader:@"Accept" value:@"text/html"];
+    
     [client postPath:@"create" parameters:ad success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"POST succeeded ");
         [self refreshActivityList];

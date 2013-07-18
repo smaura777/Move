@@ -201,7 +201,7 @@
 
 
 - (IBAction)done:(UIStoryboardSegue *)segue {
-    if ([segue.identifier isEqualToString:@"mspvc_done" ]){
+    
         
         NSLog(@"Source VC == %@",[[[segue sourceViewController] activity] activity_name] );
         NSLog(@"Destination VC == %@",[[segue destinationViewController] description]);
@@ -209,18 +209,16 @@
         
         //[self  dismissViewControllerAnimated:YES completion:nil];
         [self.navigationController popViewControllerAnimated:YES];
-    }
+    
     
     NSLog(@"Done clicked");
 }
 
 - (IBAction)cancel:(UIStoryboardSegue *)segue {
-    if ([segue.identifier isEqualToString:@"mspvc_cancel" ]){
         
         //[self dismissViewControllerAnimated:YES completion:nil];
         [self.navigationController popViewControllerAnimated:YES];
-        
-    }
+    
     NSLog(@"Cancel clicked");
 }
 

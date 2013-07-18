@@ -212,12 +212,12 @@
                     <navigationItem key="navigationItem" id="D9K-al-N6D">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="bNV-g8-4G2">
                             <connections>
-                                <segue destination="gOA-ta-dD9" kind="unwind" unwindAction="cancel:" id="e1B-Ap-9HP"/>
+                                <segue destination="gOA-ta-dD9" kind="unwind" identifier="weight_cancel" unwindAction="cancel:" id="e1B-Ap-9HP"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="EPK-OM-mKy">
                             <connections>
-                                <segue destination="gOA-ta-dD9" kind="unwind" unwindAction="done:" id="arh-2P-QpA"/>
+                                <segue destination="gOA-ta-dD9" kind="unwind" identifier="weight_done" unwindAction="done:" id="arh-2P-QpA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -296,32 +296,6 @@
             <point key="canvasLocation" x="-862" y="-43"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NewWeightActivity" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewWeightActivity.h"/>
-            <relationships>
-                <relationship kind="action" name="durationSliderChanged:"/>
-                <relationship kind="action" name="repetitionSliderChanged:"/>
-                <relationship kind="action" name="setsSliderChanged:"/>
-                <relationship kind="action" name="weightSliderChanged:"/>
-                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="repetitionsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="repetitionsSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="setsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="setsSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="weightLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="weightSlider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-        <class className="WeightExerciseLookup" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WeightExerciseLookup.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

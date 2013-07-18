@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     [self configureView];
-    self.activity = [[Activity alloc] init];
+    self.activity = [[Activity alloc] initForWeightTrainingWithName:nil weight:nil reps:nil sets:nil duration:nil];
     self.activity.activity_type = @"weight";
     
 

@@ -296,35 +296,9 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5YP-6H-g5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111" y="29"/>
+            <point key="canvasLocation" x="156" y="29"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NameLookupVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NameLookupVC.h"/>
-        </class>
-        <class className="NewActivityVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewActivityVC.h"/>
-            <relationships>
-                <relationship kind="action" name="distanceSliderChanged:"/>
-                <relationship kind="action" name="durationSliderChanged:"/>
-                <relationship kind="action" name="repetitionSliderChanged:"/>
-                <relationship kind="action" name="setsSliderChanged:"/>
-                <relationship kind="outlet" name="distanceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="distanceSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="durationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="durationSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="repetitionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="repetitionSlider" candidateClass="UISlider"/>
-                <relationship kind="outlet" name="setsLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="setsSlider" candidateClass="UISlider"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

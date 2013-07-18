@@ -30,7 +30,7 @@
 {
     [super viewDidLoad];
     [self configureView];
-    self.activity = [[Activity alloc] init];
+    self.activity = [[Activity alloc] initForCardioWithName:nil reps:nil sets:nil distance:nil speed:nil duration:nil];
     self.activity.activity_type = @"cardio";
     
     
